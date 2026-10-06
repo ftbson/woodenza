@@ -59,7 +59,7 @@ export default function Footer() {
               <Link href="/livraison-et-retours">Envíos y devoluciones</Link>
             </li>
             <li>
-              <Link href="/panier">Métodos de pago</Link>
+              <Link href="/contact">Consultas sobre pagos</Link>
             </li>
             <li>
               <Link href="/termes-et-conditions">
