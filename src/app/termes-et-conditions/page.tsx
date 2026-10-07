@@ -2,72 +2,73 @@ export default function TermsPage() {
   return (
     <article className="legal-page">
       <div className="legal-container">
-        <span className="section-subtitle">Información contractual</span>
+        <span className="section-subtitle">Antes de realizar tu pedido</span>
         <h1 className="legal-title">Condiciones generales de venta</h1>
         <p className="legal-intro">
-          Estas condiciones regulan la venta de combustibles y productos de
-          calefacción a través del sitio web de Woodenza.
+          Estas reglas establecen las condiciones para comprar combustibles y
+          artículos de calefacción en la tienda en línea de Woodenza.
         </p>
 
         <section className="legal-section">
-          <h2>1. Objeto y ámbito de aplicación</h2>
+          <h2>1. Alcance de estas condiciones</h2>
           <p>
-            Estas condiciones se aplican a todos los pedidos realizados en el
-            sitio web por particulares o profesionales. Todo pedido implica su
-            aceptación sin reservas.
+            Se aplican a las compras efectuadas en esta web, tanto por
+            particulares como por profesionales. Al confirmar un pedido,
+            aceptas estas condiciones en su totalidad.
           </p>
         </section>
         <section className="legal-section">
-          <h2>2. Productos y pedidos</h2>
+          <h2>2. Información de producto y confirmación del pedido</h2>
           <p>
-            Las características principales, los precios y la disponibilidad
-            se indican en la ficha de cada producto. El pedido será definitivo
-            una vez validado el carrito y confirmado el pago o la transferencia.
+            Cada ficha presenta las características principales del producto,
+            su precio y su disponibilidad. La compra queda confirmada al
+            validar la cesta y recibir la confirmación del pago o de la
+            transferencia.
           </p>
         </section>
         <section className="legal-section">
-          <h2>3. Precios y pago</h2>
+          <h2>3. Importe y medios de pago</h2>
           <p>
-            Los precios se muestran en euros e incluyen los impuestos cuando
-            corresponda. El pago se realiza mediante los métodos disponibles al
-            tramitar el pedido. Los pedidos pagados por transferencia se
-            procesan una vez recibidos los fondos.
+            Los importes aparecen en euros e incluyen los impuestos cuando
+            corresponda. Puedes pagar con los métodos que se ofrezcan durante
+            el proceso de compra. Si eliges transferencia, tramitaremos el
+            pedido después de recibir los fondos.
           </p>
         </section>
         <section className="legal-section">
-          <h2>4. Entrega</h2>
+          <h2>4. Condiciones de entrega</h2>
           <p>
-            Las condiciones, los plazos orientativos y las zonas de entrega se
-            detallan en nuestra política de envíos y devoluciones. El cliente
-            debe comprobar que el acceso al lugar de descarga sea practicable y
-            seguro.
+            Consulta nuestra política de envíos y devoluciones para conocer las
+            zonas disponibles y los plazos estimados. Antes de pedir, comprueba
+            que se pueda acceder al punto de descarga de forma segura y
+            practicable.
           </p>
         </section>
         <section className="legal-section">
-          <h2>5. Derecho de desistimiento</h2>
+          <h2>5. Desistimiento</h2>
           <p>
-            El derecho de desistimiento se ejerce en las condiciones previstas
-            por la ley. No se aplica a productos fabricados según las
-            especificaciones del cliente ni a los que puedan deteriorarse
-            rápidamente. Consulta la política de envíos y devoluciones para
-            conocer el procedimiento.
+            Podrás ejercer el derecho de desistimiento en los términos que
+            establezca la ley. Este derecho no se aplica a artículos
+            personalizados conforme a tus indicaciones ni a productos que se
+            deterioren rápidamente. En la política de envíos y devoluciones
+            encontrarás el procedimiento.
           </p>
         </section>
         <section className="legal-section">
-          <h2>6. Garantías y responsabilidad</h2>
+          <h2>6. Garantías legales y uso de los productos</h2>
           <p>
-            El vendedor sigue sujeto a las garantías legales aplicables. Los
-            productos deben utilizarse para el fin previsto y de acuerdo con
-            las recomendaciones del fabricante. El vendedor no será
-            responsable del uso inadecuado de los productos.
+            Se mantienen las garantías legales que correspondan. Utiliza cada
+            producto para el fin previsto y sigue las instrucciones del
+            fabricante; el vendedor no responde de los daños derivados de un
+            uso inadecuado.
           </p>
         </section>
         <section className="legal-section">
           <h2>7. Contacto</h2>
           <p>
-            Si tienes alguna pregunta sobre un pedido, escríbenos a
-            contact@bonbois.fr o llámanos al +41767529493. Dirección: 344 RUE
-            DE LA CRESSONNIERE 97440 SAINT-ANDRE FRANCE.
+            Para consultar cualquier asunto relacionado con tu pedido,
+            contacta con nosotros en contact@bonbois.fr o en el +41767529493.
+            Dirección: 344 RUE DE LA CRESSONNIERE 97440 SAINT-ANDRE FRANCE.
           </p>
         </section>
         <p className="legal-updated">

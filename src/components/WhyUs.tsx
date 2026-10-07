@@ -12,27 +12,27 @@ interface Feature {
 const features: Feature[] = [
   {
     icon: "fa-solid fa-truck-fast",
-    title: "Entrega rápida",
+    title: "Entrega a domicilio",
     description:
-      "Entrega a domicilio en un plazo de 24 a 72 horas en toda Suiza.",
+      "Recibe tu pedido en Suiza en un plazo estimado de 24 a 72 horas.",
     active: true,
   },
   {
     icon: "fa-solid fa-award",
-    title: "Calidad superior",
-    description: "Leña suiza, secada en horno y certificada.",
+    title: "Combustibles seleccionados",
+    description: "Leña suiza secada en horno y certificada.",
   },
   {
     icon: "fa-solid fa-shield-halved",
-    title: "Pago seguro",
+    title: "Opciones de pago seguras",
     description:
-      "TWINT, tarjeta de crédito o pago contra factura, con cifrado completo.",
+      "Elige entre tarjeta bancaria, Wero o transferencia bancaria durante el pago.",
   },
   {
     icon: "fa-solid fa-headset",
-    title: "Atención al cliente",
+    title: "Asesoramiento cercano",
     description:
-      "Asesoramiento personalizado de lunes a sábado.",
+      "Resolvemos tus dudas y te asesoramos de lunes a sábado.",
   },
 ];
 
@@ -44,10 +44,10 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { id: "clients", target: 15000, suffix: "+", label: "CLIENTES SATISFECHOS" },
-  { id: "steres", target: 25000, suffix: "", label: "ESTÉREOS ENTREGADOS" },
-  { id: "experience", target: 12, suffix: "", label: "AÑOS DE EXPERIENCIA" },
-  { id: "cantons", target: 26, suffix: "", label: "CANTONES ATENDIDOS" },
+  { id: "clients", target: 15000, suffix: "+", label: "CLIENTES QUE CONFÍAN EN NOSOTROS" },
+  { id: "steres", target: 25000, suffix: "", label: "ESTÉREOS DE LEÑA ENTREGADOS" },
+  { id: "experience", target: 12, suffix: "", label: "AÑOS EN EL SECTOR" },
+  { id: "cantons", target: 26, suffix: "", label: "CANTONES DE SUIZA ATENDIDOS" },
 ];
 
 export default function WhyUs() {
@@ -112,9 +112,9 @@ export default function WhyUs() {
       <div className="whyus-container">
         {/* En-tête */}
         <div className="whyus-header">
-          <h2 className="whyus-title">¿Por qué Woodenza?</h2>
+          <h2 className="whyus-title">Calefacción de leña con Woodenza</h2>
           <p className="whyus-subtitle">
-            Cuatro compromisos en los que puedes confiar.
+            Calidad, servicio y una compra sencilla, desde la elección hasta la entrega.
           </p>
           <div className="whyus-line"></div>
         </div>

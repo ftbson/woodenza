@@ -76,9 +76,7 @@ export default function ProductDetails({ product }: { product: Product }) {
               <strong>{product.price.toFixed(2)} €</strong>
             </div>
             <p className="product-detail-description">
-              Un combustible cuidadosamente seleccionado y listo para llegar a
-              tu domicilio. Disfruta de madera de calidad para obtener un calor
-              constante y duradero.
+              {product.description}
             </p>
 
             <div className="product-purchase-row">
@@ -105,11 +103,11 @@ export default function ProductDetails({ product }: { product: Product }) {
                 onClick={addProductToCart}
               >
                 <i className="fa-solid fa-cart-shopping"></i>
-                Añadir al carrito
+                Añadir a la cesta
               </button>
             </div>
             <Link href="/panier" className="product-cart-link">
-              Ver el carrito
+              Ir a la cesta
             </Link>
           </div>
         </div>

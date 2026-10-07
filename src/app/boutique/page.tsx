@@ -1,9 +1,9 @@
 import ShopGrid from "@/components/ShopGrid";
 
 export const metadata = {
-  title: "Tienda | Woodenza",
+  title: "Comprar leña, pellets y estufas en Suiza | Woodenza",
   description:
-    "Descubre nuestra selección de leña, pellets y briquetas de madera.",
+    "Consulta el catálogo Woodenza: leña, pellets, briquetas y estufas de leña con entrega en Suiza.",
 };
 
 export default function BoutiquePage() {

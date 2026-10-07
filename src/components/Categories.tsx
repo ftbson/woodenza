@@ -12,7 +12,7 @@ interface CategoryItem {
 const categories: CategoryItem[] = [
   {
     id: "bois-de-chauffage",
-    title: "Leña",
+    title: "Leña para calefacción",
     slug: "/bois-de-chauffage",
     icon: "fa-fire",
     image: "/img/cat-bois.jpg",
@@ -20,28 +20,28 @@ const categories: CategoryItem[] = [
   },
   {
     id: "granules",
-    title: "Pellets",
+    title: "Pellets de madera",
     slug: "/granules",
     icon: "fa-seedling",
     image: "/img/cat-granules.jpg",
   },
   {
     id: "briquettes",
-    title: "Briquetas de madera",
+    title: "Briquetas de madera comprimida",
     slug: "/briquettes",
     icon: "fa-cubes",
     image: "/img/cat-briquettes.jpg",
   },
   {
     id: "bois-presse",
-    title: "Leña compactada",
+    title: "Leña prensada",
     slug: "/bois-presse",
     icon: "fa-layer-group",
     image: "/img/cat-presse.jpg",
   },
   {
     id: "fours",
-    title: "Estufas de leña",
+    title: "Estufas y calefacción de leña",
     slug: "/fours",
     icon: "fa-dumpster-fire",
     image: "/img/cat-fours.jpg",
@@ -52,34 +52,41 @@ export default function Categories() {
   return (
     <section className="categories-section" id="categories">
       <div className="categories-container">
-        {/* Encabezado de sección */}
+        {/* Encabezado */}
         <div className="categories-header">
-          <h2 className="categories-title">Nuestras categorías</h2>
+          <span className="categories-tag">Encuentra lo que necesitas</span>
+          <h2 className="categories-title">Combustibles y calefacción para tu hogar</h2>
           <p className="categories-subtitle">
-            Todo para disfrutar de un hogar cálido, con una calidad impecable.
+            Explora nuestra gama de leña, pellets y estufas para elegir la opción adecuada para tu casa.
           </p>
-          <div className="categories-line"></div>
         </div>
 
-        {/* Cuadrícula de categorías */}
+        {/* Grilla */}
         <div className="categories-grid">
           {categories.map((cat) => (
             <Link
               key={cat.id}
-              href="/boutique"
+              href={`/boutique${cat.slug}`}
               className={`category-card ${cat.isLarge ? "large-card" : ""}`}
-              style={{ backgroundImage: `url(${cat.image})` }}
             >
-              <div className="card-overlay"></div>
+              {/* Fond de la carte */}
+              <div
+                className="card-bg-image"
+                style={{ backgroundImage: `url(${cat.image})` }}
+              />
+              <div className="card-overlay" />
 
-              <div className="card-content">
+              {/* Haut de carte (Icône badge) */}
+              <div className="card-header-info">
                 <div className="card-icon-badge">
                   <i className={`fa-solid ${cat.icon}`}></i>
                 </div>
-                <h3 className="card-title">{cat.title}</h3>
+              </div>
 
-                <div className="card-btn-hover">
-                  <span>Descubrir</span>
+              {/* Bas de carte (Titre + Bouton d'action) */}
+              <div className="card-content">
+                <h3 className="card-title">{cat.title}</h3>
+                <div className="card-action-btn">
                   <i className="fa-solid fa-arrow-right"></i>
                 </div>
               </div>

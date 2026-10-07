@@ -7,29 +7,29 @@ export default function ContactPage() {
 
   const faqs = [
     {
-      question: "¿Qué tipos de madera ofrece Woodenza?",
+      question: "¿Qué variedades de leña puedo encontrar?",
       answer:
-        "Ofrecemos principalmente maderas duras de alto poder calorífico: roble, haya, carpe y fresno. Arden durante más tiempo y de forma uniforme, por lo que son ideales para estufas, chimeneas y hogares cerrados.",
+        "El catálogo incluye sobre todo maderas duras con alto poder calorífico, como roble, haya, carpe y fresno. Su combustión uniforme y duradera las hace adecuadas para estufas, chimeneas y hogares cerrados.",
     },
     {
-      question: "¿La leña está seca y lista para usar?",
+      question: "¿Puedo utilizar la leña nada más recibirla?",
       answer:
-        "Sí. Toda nuestra leña se seca en horno (con una humedad residual inferior al 20 %) y está lista para usar desde la entrega, con una combustión óptima y menos humo.",
+        "Sí. La leña se seca en horno y tiene una humedad residual inferior al 20 %, por lo que llega lista para usar y favorece una combustión eficiente con menos humo.",
     },
     {
-      question: "¿Qué longitudes de troncos hay disponibles?",
+      question: "¿En qué medidas se venden los troncos?",
       answer:
-        "Nuestros troncos se cortan en longitudes estándar de 25 o 33 cm, ideales para la mayoría de las estufas y chimeneas modernas.",
+        "Disponemos de troncos de 25 y 33 cm, medidas habituales que se adaptan a muchas estufas y chimeneas modernas.",
     },
     {
-      question: "¿Ofrecen entrega a domicilio?",
+      question: "¿Cómo se realiza la entrega de los palés?",
       answer:
-        "Sí. Entregamos los palés de leña directamente en tu domicilio y los dejamos con una transpaleta lo más cerca posible de tu zona de almacenamiento.",
+        "Llevamos los palés hasta tu domicilio y, con una transpaleta, los dejamos tan cerca como sea posible del lugar donde los guardarás.",
     },
     {
-      question: "¿Qué cantidad de leña debería pedir?",
+      question: "¿Cuánta leña necesito para la temporada?",
       answer:
-        "Para un uso ocasional, normalmente basta con medio palé. Si calientas principalmente con leña durante todo el invierno, recomendamos entre 2 y 3 palés completos, según el tamaño de tu hogar.",
+        "Para encender la chimenea de vez en cuando, medio palé suele ser suficiente. Si la leña es tu fuente principal de calor durante el invierno, puedes necesitar entre dos y tres palés, según el tamaño de la vivienda.",
     },
   ];
 
@@ -43,8 +43,8 @@ export default function ContactPage() {
         <div className="contact-grid">
           {/* COLUMNA IZQUIERDA: preguntas frecuentes */}
           <div className="faq-column">
-            <span className="section-subtitle">INFORMACIÓN Y AYUDA</span>
-            <h2 className="section-title">PREGUNTAS FRECUENTES</h2>
+            <span className="section-subtitle">TE AYUDAMOS</span>
+            <h2 className="section-title">Dudas habituales sobre leña y pedidos</h2>
 
             <div className="faq-accordion">
               {faqs.map((faq, index) => (
@@ -80,9 +80,9 @@ export default function ContactPage() {
 
           {/* COLUMNA DERECHA: FORMULARIO */}
           <div className="form-column">
-            <span className="section-subtitle">CONTACTO</span>
+            <span className="section-subtitle">            ¿NECESITAS AYUDA?</span>
             <h2 className="section-title">
-              No dudes en ponerte en contacto con nosotros si tienes alguna pregunta.
+              Estamos aquí para resolver tus dudas sobre productos, entregas o pedidos.
             </h2>
 
             <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
@@ -98,37 +98,37 @@ export default function ContactPage() {
                 <input
                   type="text"
                   className="input-underline"
-                  placeholder="Nombre"
+                  placeholder="Tu nombre"
                   required
                 />
                 <input
                   type="email"
                   className="input-underline"
-                  placeholder="Correo electrónico"
+                  placeholder="Tu correo electrónico"
                   required
                 />
                 <input
                   type="tel"
                   className="input-underline"
-                  placeholder="Número de teléfono"
+                  placeholder="Tu teléfono"
                 />
                 <input
                   type="text"
                   className="input-underline"
-                  placeholder="Asunto"
+                  placeholder="Motivo de la consulta"
                 />
               </div>
 
               {/* Mensaje */}
               <textarea
                 className="input-underline textarea"
-                placeholder="Tu mensaje"
+                placeholder="Cuéntanos en qué podemos ayudarte"
                 rows={3}
                 required
               ></textarea>
 
               <button type="submit" className="btn-submit-contact">
-                ENVIAR PREGUNTA
+                ENVIAR CONSULTA
               </button>
             </form>
           </div>

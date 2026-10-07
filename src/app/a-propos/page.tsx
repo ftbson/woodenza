@@ -1,5 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Quiénes somos | Woodenza, calefacción de leña en Suiza",
+  description:
+    "Conoce Woodenza: una selección de leña, pellets, briquetas y estufas para calentar tu hogar con asesoramiento y entrega en Suiza.",
+};
 
 export default function AboutPage() {
   return (
@@ -10,14 +17,14 @@ export default function AboutPage() {
           <div className="about-grid-3">
             {/* Área 1: nuestra misión */}
             <div className="about-col">
-              <span className="about-subtitle-tag">Sobre Woodenza</span>
-              <h1 className="about-col-title">Nuestra misión</h1>
+              <span className="about-subtitle-tag">Conoce Woodenza</span>
+              <h1 className="about-col-title">Calor de hogar, con una elección consciente</h1>
               <p className="about-text">
-                En Woodenza creemos que la calefacción con leña debe ser
-                económica, cómoda y respetuosa con el medioambiente. Por eso
-                seleccionamos combustibles de alta calidad procedentes de
-                fuentes responsables, para ofrecer un calor constante y un
-                rendimiento óptimo en cada uso.
+                En Woodenza queremos que calentar tu casa con leña sea una
+                opción práctica, asequible y más respetuosa con el entorno.
+                Elegimos combustibles de calidad procedentes de fuentes
+                responsables para ofrecer un rendimiento fiable y un calor
+                agradable en el día a día.
               </p>
             </div>
 
@@ -25,17 +32,16 @@ export default function AboutPage() {
             <div className="about-col flex-between">
               <div>
                 <h3 className="about-col-h3">
-                  Ponemos nuestra experiencia al servicio de tu comodidad.
-                  Ahorra con nuestros productos y servicios.
+                  Experiencia en calefacción para que elijas con tranquilidad.
                 </h3>
                 <p className="about-text">
-                  Con años de experiencia en la distribución de leña, Woodenza
-                  ayuda a particulares y empresas a cubrir todas sus
+                  Llevamos años distribuyendo leña y ayudamos a hogares y
+                  empresas a encontrar soluciones adecuadas para sus
                   necesidades de calefacción.
                 </p>
               </div>
               <Link href="/boutique" className="about-link-btn">
-                VISITAR LA TIENDA
+                DESCUBRIR EL CATÁLOGO
               </Link>
             </div>
 
@@ -43,16 +49,16 @@ export default function AboutPage() {
             <div className="about-col flex-between">
               <div>
                 <h3 className="about-col-h3">
-                  Una selección responsable y cuidadosa de productos
+                  Productos elegidos por su calidad y rendimiento
                 </h3>
                 <p className="about-text">
-                  Ya sea leña, briquetas de haya, pellets, leña compactada o
-                  estufas de leña, ofrecemos productos seleccionados por su
-                  rendimiento y fiabilidad.
+                  En el catálogo encontrarás leña, briquetas de haya, pellets,
+                  leña prensada y estufas de leña, seleccionados para ofrecer
+                  un uso fiable y un buen rendimiento.
                 </p>
               </div>
               <Link href="/boutique" className="about-link-btn">
-                VISITAR LA TIENDA
+                EXPLORAR LOS PRODUCTOS
               </Link>
             </div>
           </div>
@@ -67,7 +73,7 @@ export default function AboutPage() {
             <div className="about-image-wrapper">
               <Image
                 src="/img/about.jpeg"
-                alt="Almacén de leña de Woodenza"
+                alt="Espacio de almacenamiento de leña de Woodenza"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="about-img"
@@ -78,29 +84,29 @@ export default function AboutPage() {
             {/* Contenu texte */}
             <div className="about-feature-content">
               <span className="about-subtitle-tag">
-                Tu especialista en calefacción con leña
+                Tu tienda de leña y calefacción
               </span>
               <h2 className="about-main-title">
-                Con Woodenza eliges:
+                Lo que encuentras en Woodenza
               </h2>
 
               <p className="about-highlight-text">
-                Calidad, rendimiento, sostenibilidad y atención personalizada.
-                Nos enorgullece contribuir a una calefacción más natural,
-                económica y responsable.
+                Combustibles seleccionados, rendimiento fiable y atención
+                personalizada para que encuentres una solución adaptada a tu
+                hogar.
               </p>
 
               <p className="about-text">
-                La calidad es el eje de todo lo que hacemos. Colaboramos con
-                socios comprometidos con la gestión forestal sostenible y
-                ofrecemos combustibles de alto poder calorífico, baja humedad
-                residual, limpios y de calidad constante.
+                La calidad guía nuestra selección. Trabajamos con socios que
+                apoyan una gestión forestal responsable y ofrecemos
+                combustibles con alto poder calorífico, poca humedad residual
+                y características constantes.
               </p>
 
               <p className="about-text">
-                Nuestros productos ofrecen una combustión eficiente y de alta
-                calidad. Probamos cada uno para garantizar una calefacción
-                óptima en cualquier época del año.
+                Buscamos productos que proporcionen una combustión eficiente y
+                un calor constante. Seleccionamos cada referencia pensando en
+                las necesidades de calefacción durante todo el año.
               </p>
 
               {/* Redes sociales */}

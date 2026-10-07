@@ -54,14 +54,14 @@ export default function CartPage() {
   useEffect(() => {
     fetch("/api/wero")
       .then(async (response) => {
-        if (!response.ok) throw new Error("No se pudo cargar Wero");
+        if (!response.ok) throw new Error("No ha sido posible consultar la disponibilidad de Wero.");
         setWeroDetails(await response.json());
       })
       .catch(() => setWeroDetails({ enabled: false }));
 
     fetch("/api/bank-transfer")
       .then(async (response) => {
-        if (!response.ok) throw new Error("No se pudieron cargar los datos bancarios");
+        if (!response.ok) throw new Error("No ha sido posible consultar los datos bancarios.");
         setBankTransferDetails(await response.json());
       })
       .catch(() => setBankTransferDetails({ enabled: false }));
@@ -90,35 +90,35 @@ export default function CartPage() {
       });
       const data = await response.json();
       if (!response.ok)
-        throw new Error(data.error || "Se ha producido un error.");
+        throw new Error(data.error || "No se pudo completar el pedido.");
       if (paymentMethod === "stripe") {
         if (!data.url)
-          throw new Error("Falta la URL de pago de Stripe.");
+          throw new Error("No se recibió el enlace para continuar con el pago.");
         window.location.assign(data.url);
         return;
       }
 
       if (paymentMethod === "wero") {
         setMessage(
-          `Pedido ${data.orderId} registrado. Envía ${data.grandTotal.toFixed(2)} € mediante Wero al ${data.weroDetails.phoneNumber}, a nombre de ${data.weroDetails.recipientName}.`,
+          `Hemos registrado el pedido ${data.orderId}. Envía ${data.grandTotal.toFixed(2)} € por Wero al ${data.weroDetails.phoneNumber}, a nombre de ${data.weroDetails.recipientName}.`,
         );
       } else {
         const { accountName, iban, bic } = data.bankDetails;
         const details = [
-          accountName && `Beneficiario: ${accountName}`,
-          iban && `IBAN : ${iban}`,
-          bic && `BIC : ${bic}`,
+          accountName && `titular: ${accountName}`,
+          iban && `IBAN: ${iban}`,
+          bic && `BIC: ${bic}`,
         ]
           .filter(Boolean)
           .join(" | ");
         setMessage(
-          `Pedido ${data.orderId} registrado. Realiza una transferencia de ${data.grandTotal.toFixed(2)} €${details ? ` a ${details}` : ". Ponte en contacto con nosotros para obtener los datos bancarios"}. Referencia: ${data.orderId}.`,
+          `Hemos registrado el pedido ${data.orderId}. Transfiere ${data.grandTotal.toFixed(2)} €${details ? ` a ${details}` : ". Contacta con nosotros para solicitar los datos bancarios"}. Incluye esta referencia: ${data.orderId}.`,
         );
       }
       clearCart();
     } catch (error) {
       setMessage(
-        error instanceof Error ? error.message : "Se ha producido un error.",
+        error instanceof Error ? error.message : "No se pudo completar el pedido.",
       );
     } finally {
       setLoading(false);
@@ -128,25 +128,25 @@ export default function CartPage() {
   return (
     <main className="cart-page">
       <div className="cart-container">
-        <h1 className="cart-page-title">Mi carrito</h1>
+        <h1 className="cart-page-title">Tu cesta</h1>
         {cart.length === 0 ? (
           <div className="empty-cart">
             {message && <p className="checkout-message">{message}</p>}
             <i className="fa-solid fa-basket-shopping empty-icon"></i>
-            <h2>Tu carrito está vacío</h2>
-            <p>Descubre nuestros productos y elige los que más te gusten.</p>
+            <h2>Aún no has añadido productos</h2>
+            <p>Explora el catálogo y encuentra leña, pellets o una estufa para tu hogar.</p>
             <Link href="/boutique" className="btn-primary-cart">
-              Volver a la tienda
+              Ir al catálogo
             </Link>
           </div>
         ) : (
           <form className="cart-layout" onSubmit={checkout}>
             <div className="cart-items-section">
               <div className="cart-items-header">
-                <span>Producto</span>
-                <span>Precio</span>
-                <span>Cantidad</span>
-                <span>Total</span>
+                <span>Artículo</span>
+                <span>Precio unitario</span>
+                <span>Unidades</span>
+                <span>Importe</span>
                 <span></span>
               </div>
               {cart.map((item) => (
@@ -191,7 +191,7 @@ export default function CartPage() {
                     type="button"
                     className="btn-remove"
                     onClick={() => removeFromCart(item.id)}
-                    aria-label="Eliminar"
+                    aria-label={`Quitar ${item.title} de la cesta`}
                   >
                     <i className="fa-solid fa-trash"></i>
                   </button>
@@ -199,23 +199,23 @@ export default function CartPage() {
               ))}
               <div className="cart-actions-bottom">
                 <button type="button" className="btn-clear" onClick={clearCart}>
-                  Vaciar el carrito
+                  Eliminar todos los artículos
                 </button>
                 <Link href="/boutique" className="btn-continue">
-                  <i className="fa-solid fa-arrow-left"></i> Seguir comprando
+                  <i className="fa-solid fa-arrow-left"></i> Volver al catálogo
                 </Link>
               </div>
               <section className="checkout-customer">
-                <h2>Tus datos</h2>
+                <h2>Datos para la entrega</h2>
                 <div className="checkout-fields">
                   {(
                     [
                       ["firstName", "Nombre"],
                       ["lastName", "Apellidos"],
-                      ["email", "Email"],
-                      ["whatsapp", "Teléfono / WhatsApp"],
-                      ["streetAddress", "Dirección de entrega"],
-                      ["country", "País"],
+                      ["email", "Correo electrónico"],
+                      ["whatsapp", "Teléfono o WhatsApp"],
+                      ["streetAddress", "Dirección donde recibir el pedido"],
+                      ["country", "País de entrega"],
                     ] as [keyof Customer, string][]
                   ).map(([field, label]) => (
                     <label key={field}>
@@ -234,22 +234,22 @@ export default function CartPage() {
               </section>
             </div>
             <div className="cart-summary-card">
-              <h3>Resumen del pedido</h3>
+              <h3>Detalle de la compra</h3>
               <div className="summary-row">
                 <span>Subtotal</span>
                 <span>{subtotal.toFixed(2).replace(".", ",")} €</span>
               </div>
               <div className="summary-row">
-                <span>Envío</span>
+                <span>Coste de envío</span>
                 <span>
                   {shippingCost === 0
-                    ? "Gratis"
+                    ?                     "Sin coste"
                     : `${shippingCost.toFixed(2).replace(".", ",")} €`}
                 </span>
               </div>
               <div className="summary-divider"></div>
               <div className="summary-row total">
-                <span>Total (impuestos incluidos)</span>
+                <span>Total a pagar (impuestos incluidos)</span>
                 <span>{grandTotal.toFixed(2).replace(".", ",")} €</span>
               </div>
               <div className="payment-options">
@@ -261,7 +261,7 @@ export default function CartPage() {
                     checked={paymentMethod === "stripe"}
                     onChange={() => setPaymentMethod("stripe")}
                   />
-                  Tarjeta bancaria (Stripe)
+                  Tarjeta bancaria
                 </label>
                 <label>
                   <input
@@ -273,7 +273,7 @@ export default function CartPage() {
                     onChange={() => setPaymentMethod("wero")}
                   />
                   Wero
-                  {!weroDetails?.enabled && " (no disponible)"}
+                  {!weroDetails?.enabled && " (temporalmente no disponible)"}
                 </label>
                 <label>
                   <input
@@ -285,7 +285,7 @@ export default function CartPage() {
                     onChange={() => setPaymentMethod("bank_transfer")}
                   />
                   Transferencia bancaria
-                  {!bankTransferDetails?.enabled && " (no disponible)"}
+                  {!bankTransferDetails?.enabled && " (temporalmente no disponible)"}
                 </label>
               </div>
               {paymentMethod === "wero" && weroDetails?.enabled ? (
@@ -302,15 +302,15 @@ export default function CartPage() {
                     </p>
                   )}
                   <p className="bank-transfer-reference">
-                    Realiza el pago desde la aplicación Wero. El pedido quedará
-                    pendiente de verificación.
+                    Completa el pago desde Wero. El pedido quedará pendiente
+                    de verificación.
                   </p>
                 </div>
               ) : paymentMethod === "wero" ? (
                 <p className="checkout-message">
                   {weroDetails === null
-                    ? "Cargando los datos de Wero..."
-                    : "El pago mediante Wero aún no está configurado. Ponte en contacto con nosotros para completar el pedido."}
+                    ? "Consultando los datos de Wero..."
+                    : "Wero todavía no está configurado. Contacta con nosotros si quieres completar el pedido con este método."}
                 </p>
               ) : paymentMethod === "bank_transfer" &&
                 bankTransferDetails?.enabled ? (
@@ -333,15 +333,15 @@ export default function CartPage() {
                     </p>
                   )}
                   <p className="bank-transfer-reference">
-                    Indica la referencia del pedido al realizar la transferencia.
-                    El pedido quedará pendiente de recibir los fondos.
+                    Incluye la referencia del pedido en la transferencia. La
+                    compra se tramitará cuando recibamos los fondos.
                   </p>
                 </div>
               ) : paymentMethod === "bank_transfer" ? (
                 <p className="checkout-message">
                   {bankTransferDetails === null
-                    ? "Cargando los datos bancarios..."
-                    : "La transferencia bancaria aún no está configurada. Ponte en contacto con nosotros para completar el pedido."}
+                    ? "Consultando los datos bancarios..."
+                    : "El pago por transferencia todavía no está configurado. Contacta con nosotros para completar el pedido."}
                 </p>
               ) : null}
               {message && <p className="checkout-message">{message}</p>}
@@ -356,8 +356,8 @@ export default function CartPage() {
                 }
               >
                 {loading
-                  ? "Procesando..."
-                  : `Pedir con ${
+                  ? "Tramitando..."
+                  : `Confirmar pedido con ${
                       paymentMethod === "stripe"
                         ? "Stripe"
                         : paymentMethod === "wero"

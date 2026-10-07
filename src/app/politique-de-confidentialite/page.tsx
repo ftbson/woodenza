@@ -2,64 +2,63 @@ export default function PrivacyPolicyPage() {
   return (
     <article className="legal-page">
       <div className="legal-container">
-        <span className="section-subtitle">Datos personales</span>
+        <span className="section-subtitle">Privacidad y datos personales</span>
         <h1 className="legal-title">Política de privacidad</h1>
         <p className="legal-intro">
-          Esta política explica qué datos recopila Woodenza, por qué se utilizan
-          y cuáles son tus derechos.
+          Te explicamos qué información personal podemos tratar, con qué
+          finalidad y qué opciones tienes para ejercer tus derechos.
         </p>
 
         <section className="legal-section">
-          <h2>1. Datos recopilados</h2>
+          <h2>1. Información que podemos recoger</h2>
           <p>
-            Al realizar un pedido o ponerte en contacto con nosotros, podemos
-            recopilar tu nombre y apellidos, dirección de entrega, correo
-            electrónico, número de teléfono y la información necesaria para
-            hacer el seguimiento de tu pedido.
+            Cuando compras o nos escribes, podemos solicitar tu nombre y
+            apellidos, domicilio de entrega, correo electrónico, teléfono y
+            otros datos necesarios para gestionar y seguir el pedido.
           </p>
         </section>
         <section className="legal-section">
-          <h2>2. Finalidades y base jurídica</h2>
+          <h2>2. Uso de los datos y fundamento del tratamiento</h2>
           <p>
-            Estos datos se utilizan para gestionar los pedidos, organizar la
-            entrega, responder a consultas y cumplir nuestras obligaciones
-            contables y legales. El tratamiento se basa principalmente en la
-            ejecución del contrato, el cumplimiento de una obligación legal o
-            tu consentimiento.
+            Utilizamos esta información para tramitar compras, coordinar
+            entregas, contestar tus consultas y atender obligaciones legales y
+            contables. El tratamiento se apoya principalmente en la ejecución
+            del contrato, en una obligación legal o en tu consentimiento,
+            según corresponda.
           </p>
         </section>
         <section className="legal-section">
-          <h2>3. Destinatarios y conservación</h2>
+          <h2>3. Acceso a los datos y plazo de conservación</h2>
           <p>
-            Solo tendrán acceso a la información las personas y los proveedores
-            necesarios para gestionar el pago, la entrega, el alojamiento y el
-            sitio web. Los datos se conservarán durante el tiempo necesario
-            para estos fines y durante los plazos legales aplicables.
+            Compartimos los datos únicamente con las personas y proveedores
+            que participan en el pago, el transporte, el alojamiento o el
+            funcionamiento de la web. Los conservamos mientras sean necesarios
+            para estos fines y durante los periodos exigidos por la ley.
           </p>
         </section>
         <section className="legal-section">
-          <h2>4. Pago</h2>
+          <h2>4. Tratamiento de la información de pago</h2>
           <p>
-            Los pagos con tarjeta son gestionados por nuestro proveedor de
-            servicios de pago. Woodenza no almacena los datos completos de tu
-            tarjeta bancaria.
+            Nuestro proveedor de pagos procesa las operaciones con tarjeta.
+            Woodenza no guarda el número completo de tu tarjeta bancaria.
           </p>
         </section>
         <section className="legal-section">
-          <h2>5. Tus derechos</h2>
+          <h2>5. Cómo ejercer tus derechos</h2>
           <p>
-            Puedes solicitar el acceso, la rectificación, la supresión, la
-            limitación o la portabilidad de tus datos, así como oponerte a
-            determinados tratamientos. Escribe a info@bonboisfr.fr e indica tu
-            solicitud y la dirección de correo electrónico que utilizaste.
+            Puedes pedir acceso a tus datos, solicitar que se rectifiquen o
+            eliminen, limitar ciertos usos u obtener su portabilidad; también
+            puedes oponerte a determinados tratamientos. Escríbenos a
+            info@bonboisfr.fr e incluye tu solicitud y el correo usado en la
+            compra.
           </p>
         </section>
         <section className="legal-section">
-          <h2>6. Seguridad y reclamaciones</h2>
+          <h2>6. Protección de la información y reclamaciones</h2>
           <p>
-            Aplicamos medidas razonables para proteger tus datos. También
-            puedes presentar una reclamación ante la autoridad de protección
-            de datos competente.
+            Adoptamos medidas razonables para proteger la información personal.
+            Si lo consideras necesario, puedes presentar una reclamación ante
+            la autoridad de protección de datos competente.
           </p>
         </section>
         <p className="legal-updated">

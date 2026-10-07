@@ -15,11 +15,11 @@ export default function Navbar() {
   const isActive = (path: string) => pathname === path;
 
   const navLinks = [
-    { name: "Inicio", path: "/" },
-    { name: "Sobre nosotros", path: "/a-propos" },
-    { name: "Tienda", path: "/boutique" },
-    { name: "Categorías", path: "/boutique" },
-    { name: "Contacto", path: "/contact" },
+    { name: "Página principal", path: "/" },
+    { name: "Conoce Woodenza", path: "/a-propos" },
+    { name: "Catálogo", path: "/boutique" },
+    { name: "Productos", path: "/boutique" },
+    { name: "Ayuda y contacto", path: "/contact" },
   ];
 
   return (
@@ -52,7 +52,7 @@ export default function Navbar() {
         {/* Acciones */}
         <div className="navbar-actions">
           {/* Búsqueda */}
-          <button className="icon-btn search-btn" aria-label="Buscar">
+          <button className="icon-btn search-btn" aria-label="Buscar productos">
             <i className="fa-solid fa-magnifying-glass"></i>
           </button>
 
@@ -60,7 +60,7 @@ export default function Navbar() {
           <Link
             href="/panier"
             className="icon-btn cart-btn"
-            aria-label="Carrito"
+            aria-label="Ver la cesta"
           >
             <i className="fa-solid fa-cart-shopping"></i>
             {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
@@ -70,7 +70,7 @@ export default function Navbar() {
           <button
             className="menu-burger-btn"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Abrir el menú"
+            aria-label="Abrir el menú de navegación"
           >
             <i
               className={isMenuOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars"}

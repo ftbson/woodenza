@@ -14,8 +14,15 @@ export async function generateMetadata({
   const product = productsData.find((item) => item.id === id);
 
   return product
-    ? { title: `${product.title} | Woodenza`, description: product.title }
-    : { title: "Producto no encontrado | Woodenza" };
+    ? {
+        title: `${product.title} | Woodenza`,
+        description: product.description,
+      }
+    : {
+        title: "Producto no disponible | Woodenza",
+        description:
+          "No encontramos esta referencia en el catálogo actual de Woodenza. Explora otras opciones de leña, pellets y calefacción.",
+      };
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {

@@ -2,55 +2,55 @@ export default function DeliveryReturnsPage() {
   return (
     <article className="legal-page">
       <div className="legal-container">
-        <span className="section-subtitle">Después de tu pedido</span>
-        <h1 className="legal-title">Envíos y devoluciones</h1>
+        <span className="section-subtitle">Información para tu compra</span>
+        <h1 className="legal-title">Entrega, recepción y devoluciones</h1>
         <p className="legal-intro">
-          Consulta las condiciones de preparación, entrega y solicitud de
-          devoluciones.
+          Aquí encontrarás cómo preparamos los pedidos, qué revisar al
+          recibirlos y cómo solicitar una devolución.
         </p>
 
         <section className="legal-section">
-          <h2>1. Preparación y zona de entrega</h2>
+          <h2>1. Preparación del pedido y cobertura</h2>
           <p>
-            Los pedidos se preparan una vez confirmado el pago. La entrega se
-            organiza en la dirección indicada al realizar el pedido, siempre
-            que la zona esté cubierta. Nos pondremos en contacto contigo si
-            necesitamos alguna aclaración.
+            Empezamos a preparar tu pedido cuando el pago queda confirmado. La
+            entrega se coordina en la dirección que indicaste, siempre que
+            podamos atender esa zona. Si necesitamos completar algún dato, nos
+            pondremos en contacto contigo.
           </p>
         </section>
         <section className="legal-section">
-          <h2>2. Recepción</h2>
+          <h2>2. Comprobación de la entrega</h2>
           <p>
-            El cliente debe comprobar el estado y la cantidad de los productos
-            en el momento de la entrega. Cualquier incidencia debe comunicarse
-            al transportista y a Woodenza lo antes posible, acompañada de
-            fotografías si fuera necesario.
+            Al recibir el pedido, revisa el estado y la cantidad de los
+            productos. Comunica cualquier problema al transportista y a
+            Woodenza cuanto antes; puedes adjuntar fotografías para documentar
+            la incidencia.
           </p>
         </section>
         <section className="legal-section">
-          <h2>3. Devoluciones y desistimiento</h2>
+          <h2>3. Solicitudes de devolución y desistimiento</h2>
           <p>
-            Para ejercer el derecho de desistimiento, cuando sea aplicable,
-            escríbenos a info@bonboisfr.fr dentro del plazo legal e indica el
-            número de pedido. Los productos deben devolverse en su estado
-            original, salvo que su naturaleza o uso adecuado lo impida.
+            Cuando tengas derecho de desistimiento, envíanos un mensaje a
+            info@bonboisfr.fr dentro del plazo legal e incluye el número de
+            pedido. Devuelve los productos en su estado original, excepto
+            cuando su naturaleza o un uso adecuado no lo permita.
           </p>
         </section>
         <section className="legal-section">
-          <h2>4. Productos excluidos de devolución</h2>
+          <h2>4. Artículos que pueden quedar excluidos</h2>
           <p>
-            De acuerdo con la normativa, los productos personalizados,
-            abiertos, consumidos o que puedan deteriorarse rápidamente pueden
-            quedar excluidos del derecho de desistimiento. Te confirmaremos el
-            procedimiento aplicable a tu pedido.
+            La normativa puede excluir del desistimiento los productos
+            personalizados, abiertos o consumidos, así como aquellos que se
+            deterioren con rapidez. Te indicaremos qué procedimiento
+            corresponde a tu compra.
           </p>
         </section>
         <section className="legal-section">
-          <h2>5. Reembolsos</h2>
+          <h2>5. Reembolso del importe</h2>
           <p>
-            Si se acepta un reembolso, se realizará mediante el mismo método de
-            pago, salvo que se acuerde otra cosa. Cuando la ley lo permita, los
-            gastos de devolución correrán a cargo del cliente.
+            Si aprobamos el reembolso, lo enviaremos por el mismo medio de pago,
+            a menos que acordemos otra opción. En los casos permitidos por la
+            ley, el coste de devolver los productos corresponde al cliente.
           </p>
         </section>
         <p className="legal-updated">

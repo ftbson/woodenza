@@ -5,9 +5,9 @@ import SiteFrame from "@/components/SiteFrame";
 import { CartProvider } from "@/context/CartContext";
 
 export const metadata: Metadata = {
-  title: "Woodenza | Leña, pellets y estufas de calidad",
+  title: "Leña y pellets en Suiza | Estufas de leña - Woodenza",
   description:
-    "Combustibles de alta calidad procedentes de bosques gestionados de forma sostenible.",
+    "Encuentra leña, pellets, briquetas y estufas para tu hogar. Combustibles seleccionados y entrega en Suiza con Woodenza.",
 };
 
 export default function RootLayout({

@@ -26,8 +26,8 @@ export default function Home() {
       {/* 3. Productos más vendidos */}
       <BestSellers />
 
-      <Categories />
       <Poele />
+      <Categories />
 
       {/* 4. Por qué Woodenza */}
       <WhyUs />
@@ -45,18 +45,18 @@ export default function Home() {
 
             {/* Título */}
             <h2 className="promo-title">
-              Aprovecha nuestras ofertas y ahorra hasta un 50 %
+              Equipa tu hogar con calefacción de calidad y ahorra hasta un 50 %
             </h2>
 
             {/* Subtítulo */}
             <p className="promo-subtitle">
-              Oferta de temporada, válida hasta agotar existencias.
+              Promoción de temporada disponible hasta fin de existencias.
             </p>
           </div>
 
           {/* Llamada a la acción */}
           <Link href="/boutique" className="promo-btn">
-            <span>Comprar ahora</span>
+            <span>Explorar las ofertas</span>
             <i className="fa-solid fa-arrow-right"></i>
           </Link>
         </div>
@@ -71,7 +71,7 @@ export default function Home() {
         <button
           onClick={scrollToTop}
           className="scroll-top-btn-fixed"
-          aria-label="Volver arriba"
+          aria-label="Subir al inicio de la página"
         >
           <i className="fa-solid fa-arrow-up"></i>
           {/* <span>Volver arriba</span> */}

@@ -16,8 +16,7 @@ export default function Footer() {
             />
           </div>
           <p className="footer-description">
-            Combustibles de alta calidad procedentes de bosques gestionados de
-            forma sostenible.
+            Leña y combustibles seleccionados para disfrutar de una calefacción eficiente y responsable.
           </p>
           <div className="social-links">
             <a href="#" aria-label="Facebook" className="social-icon">

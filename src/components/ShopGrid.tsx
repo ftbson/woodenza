@@ -78,7 +78,7 @@ export default function ShopGrid() {
 
           <div className="shop-controls">
             <div className="items-per-page">
-              <span>Mostrar:</span>
+              <span>Productos por página:</span>
               {[24, 36, 45, 55].map((num) => (
                 <button
                   key={num}
@@ -96,10 +96,10 @@ export default function ShopGrid() {
                 onChange={(e) => setSortOption(e.target.value)}
                 className="sort-select"
               >
-                <option value="standard">Orden predeterminado</option>
+                <option value="standard">Orden recomendado</option>
                 <option value="price-asc">Precio: de menor a mayor</option>
                 <option value="price-desc">Precio: de mayor a menor</option>
-                <option value="rating-desc">Mejor valorados</option>
+                <option value="rating-desc">Valoración más alta</option>
               </select>
             </div>
 
@@ -108,7 +108,7 @@ export default function ShopGrid() {
               onClick={() => setShowFilterPanel(!showFilterPanel)}
             >
               <i className="fa-solid fa-sliders"></i>
-              <span>Filtros</span>
+              <span>Filtrar productos</span>
             </button>
           </div>
         </div>
@@ -123,7 +123,7 @@ export default function ShopGrid() {
                 onChange={(e) => setSelectedCategory(e.target.value)}
                 className="filter-select"
               >
-                <option value="all">Todas las categorías</option>
+                <option value="all">Ver todas las categorías</option>
                 {categories
                   .filter((cat) => cat !== "all")
                   .map((cat) => (
@@ -156,7 +156,7 @@ export default function ShopGrid() {
                 onChange={(e) => setMinRating(Number(e.target.value))}
                 className="filter-select"
               >
-                <option value={0}>Todas las valoraciones</option>
+                <option value={0}>Cualquier valoración</option>
                 <option value={4}>4 estrellas o más</option>
                 <option value={4.5}>4,5 estrellas o más</option>
                 <option value={5}>5 estrellas</option>
@@ -164,14 +164,14 @@ export default function ShopGrid() {
             </div>
 
             <button className="btn-reset-filters" onClick={resetFilters}>
-              Restablecer filtros
+              Borrar filtros
             </button>
           </div>
         )}
 
         {/* RESULTADOS */}
         <div className="results-count">
-          Mostrando <strong>{displayedProducts.length}</strong> de{" "}
+          En esta página: <strong>{displayedProducts.length}</strong> de{" "}
           <strong>{filteredProducts.length}</strong>{" "}
           {filteredProducts.length === 1 ? "producto" : "productos"}
         </div>
@@ -256,7 +256,7 @@ export default function ShopGrid() {
                   }
                 >
                   <i className="fa-solid fa-cart-shopping"></i>
-                  Añadir al carrito
+                  Añadir a la cesta
                 </button>
               </div>
             </div>
@@ -265,9 +265,9 @@ export default function ShopGrid() {
 
         {displayedProducts.length === 0 && (
           <div className="no-products-found">
-            <p>Ningún producto coincide con tus criterios de búsqueda.</p>
+            <p>No encontramos productos que coincidan con los filtros seleccionados.</p>
             <button className="btn-reset-filters" onClick={resetFilters}>
-              Restablecer filtros
+              Borrar filtros
             </button>
           </div>
         )}

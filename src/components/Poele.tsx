@@ -20,7 +20,7 @@ const products: Product[] = [
     id: "poele-toron-50",
     discount: "-38 %",
     category: "Estufas de leña",
-    title: "TORON 50 8 kW – Estufa de leña DEVILLE",
+    title: "Estufa de leña DEVILLE TORON 50, 8 kW",
     rating: 5,
     reviewsCount: 214,
     oldPrice: 1342.00,
@@ -31,7 +31,7 @@ const products: Product[] = [
     id: "poele-sara-12",
     discount: "-44 %",
     category: "Estufas de leña",
-    title: "Estufa de leña SARA 12 kW – INTERSTOVES",
+    title: "Estufa de leña INTERSTOVES SARA, 12 kW",
     rating: 5,
     reviewsCount: 431,
     oldPrice: 577.00,
@@ -42,7 +42,7 @@ const products: Product[] = [
     id: "poele-sandy-8",
     discount: "-20 %",
     category: "Estufas de leña",
-    title: "Estufa de leña SANDY 8 kW – LAB – DEVILLE",
+    title: "Estufa de leña DEVILLE SANDY 8 kW, versión LAB",
     rating: 4.5,
     reviewsCount: 1142,
     price: 799.40,
@@ -52,7 +52,7 @@ const products: Product[] = [
     id: "poele-lya-12",
     discount: "-22 %",
     category: "Estufas de leña",
-    title: "Estufa de leña LYA 12 kW – INTERSTOVES",
+    title: "Estufa de leña INTERSTOVES LYA, 12 kW",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 489.00,
@@ -63,7 +63,7 @@ const products: Product[] = [
     id: "poele-alessia-14",
     discount: "-45 %",
     category: "Estufas de leña",
-    title: "ALESSIA 14 kW – Estufa de leña INTERSTOVES",
+    title: "Estufa de leña INTERSTOVES ALESSIA, 14 kW",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 577.00,
@@ -74,7 +74,7 @@ const products: Product[] = [
     id: "poele-eguzki-6",
     discount: "-37 %",
     category: "Estufas de leña",
-    title: "Estufa de leña estanca EGUZKI 6 kW – DEVILLE",
+    title: "Estufa estanca de leña DEVILLE EGUZKI, 6 kW",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 2600.00,
@@ -91,9 +91,9 @@ export default function Poele() {
       <div className="bestsellers-container">
         {/* Encabezado */}
         <div className="bestsellers-header">
-          <h2 className="bestsellers-title">Nuestras mejores estufas de leña</h2>
+          <h2 className="bestsellers-title">Estufas de leña para tu hogar</h2>
           <p className="bestsellers-subtitle">
-            Seleccionadas cuidadosamente, probadas y disponibles de inmediato.
+            Compara modelos de distintas potencias y encuentra el que se adapte a tu espacio.
           </p>
           <div className="bestsellers-line"></div>
         </div>
@@ -163,7 +163,7 @@ export default function Poele() {
                   }
                 >
                   <i className="fa-solid fa-cart-shopping"></i>
-                  Añadir al carrito
+                  Añadir a la cesta
                 </button>
               </div>
             </div>

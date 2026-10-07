@@ -58,7 +58,7 @@ export default function Testimonials() {
       <div className="testimonials-container">
         {/* Título */}
         <div className="testimonials-header">
-          <h2 className="testimonials-title">Lo que dicen nuestros clientes</h2>
+          <h2 className="testimonials-title">Opiniones de quienes ya compran en Woodenza</h2>
         </div>
 
         {/* Opiniones */}

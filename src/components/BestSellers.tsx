@@ -15,9 +15,9 @@ export default function BestSellers() {
       <div className="bestsellers-container">
         {/* Encabezado */}
         <div className="bestsellers-header">
-          <h2 className="bestsellers-title">Más vendidos</h2>
+          <h2 className="bestsellers-title">Los productos favoritos de nuestros clientes</h2>
           <p className="bestsellers-subtitle">
-            Seleccionados cuidadosamente, revisados y listos para entregar.
+            Una selección de combustibles y artículos de calefacción preparados para tu próximo pedido.
           </p>
           <div className="bestsellers-line"></div>
         </div>
@@ -99,7 +99,7 @@ export default function BestSellers() {
                   }
                 >
                   <i className="fa-solid fa-cart-shopping"></i>
-                  Añadir al carrito
+                  Añadir a la cesta
                 </button>
               </div>
             </div>
@@ -112,7 +112,7 @@ export default function BestSellers() {
           style={{ textAlign: "center", marginTop: "40px" }}
         >
           <Link href="/boutique" className="btn-view-all">
-            Ver todos los productos <i className="fa-solid fa-arrow-right"></i>
+            Explorar el catálogo <i className="fa-solid fa-arrow-right"></i>
           </Link>
         </div>
       </div>
