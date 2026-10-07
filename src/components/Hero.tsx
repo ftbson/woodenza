@@ -76,7 +76,7 @@ export default function Hero() {
               <span className="avatar">📦</span>
             </div>
             <span className="reviews-text">
-              +1,200 clientes satisfechos en Suiza
+              +1,200 clientes satisfechos en Espana
             </span>
           </div>
 

@@ -32,7 +32,7 @@ type PaymentMethod = "stripe" | "wero" | "bank_transfer";
 const emptyCustomer: Customer = {
   firstName: "",
   lastName: "",
-  country: "Suiza",
+  country: "Espana",
   streetAddress: "",
   whatsapp: "",
   email: "",
