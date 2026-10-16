@@ -16,7 +16,7 @@ export default function LegalNoticePage() {
             <br />
             Dirección: 344 RUE DE LA CRESSONNIERE 97440 SAINT-ANDRE FRANCE
             <br />
-            Correo electrónico: contact@bonbois.fr
+            Correo electrónico: info@woodenza.es
             <br />
             Teléfono: +41767529493
           </p>

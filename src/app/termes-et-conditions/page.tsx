@@ -67,7 +67,7 @@ export default function TermsPage() {
           <h2>7. Contacto</h2>
           <p>
             Para consultar cualquier asunto relacionado con tu pedido,
-            contacta con nosotros en contact@bonbois.fr o en el +41767529493.
+            contacta con nosotros en info@woodenza.es o en el +41767529493.
             Dirección: 344 RUE DE LA CRESSONNIERE 97440 SAINT-ANDRE FRANCE.
           </p>
         </section>

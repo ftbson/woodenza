@@ -15,8 +15,8 @@ interface FeatureCard {
 const cardsData: FeatureCard[] = [
   {
     id: 1,
-    title: "98% de clients satisfaits",
-    subtitle: "Qualité & Service Suisse",
+    title: "98 % de satisfacción del cliente",
+    subtitle: "Calidad y Servicio España",
     image: "/img/hero-1.jpeg",
     badgeText: "< 18% Humidité",
   },
@@ -32,7 +32,7 @@ const cardsData: FeatureCard[] = [
     title: "Envío Rápido",
     subtitle: "Entrega directa en 24h a 72h",
     image: "/img/hero-3.jpeg",
-    badgeText: "Suiza Total",
+    badgeText: "Espana Total",
   },
 ];
 

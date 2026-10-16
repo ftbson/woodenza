@@ -3,9 +3,9 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Quiénes somos | Woodenza, calefacción de leña en Suiza",
+  title: "Quiénes somos | Woodenza, calefacción de leña en Espana",
   description:
-    "Conoce Woodenza: una selección de leña, pellets, briquetas y estufas para calentar tu hogar con asesoramiento y entrega en Suiza.",
+    "Conoce Woodenza: una selección de leña, pellets, briquetas y estufas para calentar tu hogar con asesoramiento y entrega en Espana.",
 };
 
 export default function AboutPage() {

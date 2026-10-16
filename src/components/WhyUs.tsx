@@ -14,13 +14,13 @@ const features: Feature[] = [
     icon: "fa-solid fa-truck-fast",
     title: "Entrega a domicilio",
     description:
-      "Recibe tu pedido en Suiza en un plazo estimado de 24 a 72 horas.",
+      "Recibe tu pedido en Espana en un plazo estimado de 24 a 72 horas.",
     active: true,
   },
   {
     icon: "fa-solid fa-award",
     title: "Combustibles seleccionados",
-    description: "Leña suiza secada en horno y certificada.",
+    description: "Leña Espana secada en horno y certificada.",
   },
   {
     icon: "fa-solid fa-shield-halved",
@@ -47,7 +47,7 @@ const stats: Stat[] = [
   { id: "clients", target: 15000, suffix: "+", label: "CLIENTES QUE CONFÍAN EN NOSOTROS" },
   { id: "steres", target: 25000, suffix: "", label: "ESTÉREOS DE LEÑA ENTREGADOS" },
   { id: "experience", target: 12, suffix: "", label: "AÑOS EN EL SECTOR" },
-  { id: "cantons", target: 26, suffix: "", label: "CANTONES DE SUIZA ATENDIDOS" },
+  { id: "cantons", target: 26, suffix: "", label: "CANTONES DE Espana ATENDIDOS" },
 ];
 
 export default function WhyUs() {
