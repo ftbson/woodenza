@@ -90,7 +90,7 @@ export default function Footer() {
         </div>
 
         {/* Columna 5: contacto */}
-        <div className="footer-col contact-col">
+        <div className="footer-col contact-col"> 
           <h4 className="footer-heading">CONTACTO</h4>
           <ul className="contact-info-list">
             <li>
