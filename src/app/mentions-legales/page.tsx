@@ -18,7 +18,7 @@ export default function LegalNoticePage() {
             <br />
             Correo electrónico: info@woodenza.es
             <br />
-            Teléfono: +41767529493
+            Teléfono: +34 727 74 54 78
           </p>
           <p>
             Antes de publicar la versión definitiva, el responsable debe añadir

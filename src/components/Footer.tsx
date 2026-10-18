@@ -99,7 +99,7 @@ export default function Footer() {
             </li>
             <li>
               <i className="fa-solid fa-phone"></i>
-              <a href="tel:+41767529493">+41767529493</a>
+              <a href="tel:+34727745478">+34 727 74 54 78</a>
             </li>
             <li>
               <i className="fa-solid fa-envelope"></i>
