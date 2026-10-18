@@ -95,7 +95,7 @@ export default function Footer() {
           <ul className="contact-info-list">
             <li>
               <i className="fa-solid fa-location-dot"></i>
-              <span>344 RUE DE LA CRESSONNIERE 97440 SAINT-ANDRE FRANCE</span>
+              <span> Avenida de la Constitución, 344 08860 CASTELLDEFELS ESPAGNE</span>
             </li>
             <li>
               <i className="fa-solid fa-phone"></i>

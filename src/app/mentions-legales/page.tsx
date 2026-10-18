@@ -14,7 +14,7 @@ export default function LegalNoticePage() {
           <p>
             Woodenza
             <br />
-            Dirección: 344 RUE DE LA CRESSONNIERE 97440 SAINT-ANDRE FRANCE
+            Dirección:  Avenida de la Constitución, 344 08860 CASTELLDEFELS ESPAGNE
             <br />
             Correo electrónico: info@woodenza.es
             <br />

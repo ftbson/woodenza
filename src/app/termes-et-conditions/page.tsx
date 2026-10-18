@@ -68,7 +68,7 @@ export default function TermsPage() {
           <p>
             Para consultar cualquier asunto relacionado con tu pedido,
             contacta con nosotros en info@woodenza.es o en el +34 727 74 54 78.
-            Dirección: 344 RUE DE LA CRESSONNIERE 97440 SAINT-ANDRE FRANCE.
+            Dirección: Avenida de la Constitución, 344 08860 CASTELLDEFELS ESPAGNE
           </p>
         </section>
         <p className="legal-updated">
