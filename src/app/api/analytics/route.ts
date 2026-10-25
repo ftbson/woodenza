@@ -1,11 +1,8 @@
 import { NextResponse } from "next/server";
-import { desc, eq, gte, lt, sql, sum } from "drizzle-orm";
+import { desc, sql, sum } from "drizzle-orm";
 import { cookies } from "next/headers";
 import { db } from "@/lib/db";
 import { analyticsVisits } from "@/lib/schema";
-
-const RETENTION_DAYS = 90;
-const REPORTING_DAYS = 30;
 
 function getCountryCode(request: Request) {
   const country =
@@ -31,15 +28,9 @@ export async function POST(request: Request) {
 
   try {
     const today = new Date().toISOString().slice(0, 10);
-    const cutoff = new Date(
-      Date.now() - (RETENTION_DAYS - 1) * 24 * 60 * 60 * 1000,
-    )
-      .toISOString()
-      .slice(0, 10);
     const country = getCountryCode(request);
     const id = `${today}:${country}`;
 
-    await db.delete(analyticsVisits).where(lt(analyticsVisits.visitDate, cutoff));
     await db
       .insert(analyticsVisits)
       .values({ id, visitDate: today, country, visits: 1 })
@@ -70,35 +61,21 @@ export async function GET() {
   }
 
   try {
-    const today = new Date().toISOString().slice(0, 10);
-    const startDate = new Date(
-      Date.now() - (REPORTING_DAYS - 1) * 24 * 60 * 60 * 1000,
-    )
-      .toISOString()
-      .slice(0, 10);
-
     const [total] = await db
       .select({ visits: sum(analyticsVisits.visits) })
-      .from(analyticsVisits)
-      .where(gte(analyticsVisits.visitDate, startDate));
-    const [todayTotal] = await db
-      .select({ visits: sum(analyticsVisits.visits) })
-      .from(analyticsVisits)
-      .where(eq(analyticsVisits.visitDate, today));
+      .from(analyticsVisits);
     const countries = await db
       .select({
         country: analyticsVisits.country,
         visits: sum(analyticsVisits.visits),
       })
       .from(analyticsVisits)
-      .where(gte(analyticsVisits.visitDate, startDate))
       .groupBy(analyticsVisits.country)
       .orderBy(desc(sum(analyticsVisits.visits)));
 
     return NextResponse.json(
       {
         totalVisits: Number(total?.visits ?? 0),
-        todayVisits: Number(todayTotal?.visits ?? 0),
         byCountry: countries.map(({ country, visits }) => ({
           country,
           visits: Number(visits ?? 0),

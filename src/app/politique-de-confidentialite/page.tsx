@@ -46,22 +46,18 @@ export default function PrivacyPolicyPage() {
         <section className="legal-section">
           <h2>5. Estadísticas anónimas de uso</h2>
           <p>
-            Solo si aceptas las estadísticas en el aviso que aparece en la
-            web, contamos las páginas consultadas y agrupamos los totales por
-            día y, cuando el proveedor de alojamiento ofrece ese dato, por
-            país aproximado. No guardamos direcciones IP, identificadores de
-            visitantes ni páginas individuales. Los totales se conservan
-            durante un máximo de 90 días y después se eliminan. Puedes rechazar
-            estas estadísticas sin que ello afecte al uso de la tienda, y
-            cambiar tu elección desde el botón «Privacidad» de la web.
+            Contamos las páginas consultadas y agrupamos los totales por día y,
+            cuando el proveedor de alojamiento ofrece ese dato, por país
+            aproximado. No guardamos direcciones IP, identificadores de
+            visitantes ni páginas individuales. Los totales agregados se
+            conservan para mostrar las visitas acumuladas.
           </p>
           <p>
-            Para recordar tu elección, guardamos una preferencia en el
-            almacenamiento local de tu navegador. El servidor y el proveedor
-            de alojamiento pueden tratar temporalmente datos técnicos,
-            incluida la dirección IP, para transmitir la solicitud y ofrecer
-            el país aproximado; Woodenza no conserva la dirección IP en sus
-            estadísticas.
+            El servidor y el proveedor de alojamiento pueden tratar
+            temporalmente datos técnicos, incluida la dirección IP, para
+            transmitir la solicitud y ofrecer el país aproximado; Woodenza no
+            conserva la dirección IP en sus estadísticas. En la web mostramos
+            un aviso sobre este recuento.
           </p>
         </section>
         <section className="legal-section">

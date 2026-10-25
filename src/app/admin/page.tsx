@@ -30,7 +30,6 @@ interface BizumSettings {
 
 interface AnalyticsSummary {
   totalVisits: number;
-  todayVisits: number;
   byCountry: { country: string; visits: number }[];
 }
 
@@ -384,50 +383,49 @@ export default function AdminPage() {
       </section>
 
       <section className="admin-payment-settings">
-        <h2>Statistiques de fréquentation</h2>
+        <h2>Origine des visiteurs</h2>
         <p className="admin-analytics-description">
-          Données agrégées des 30 derniers jours, actualisées toutes les 30
-          secondes. Aucune adresse IP ni identifiant de visiteur n&apos;est
-          conservé.
+          Nombre cumulé de pages consultées et répartition par pays. Les
+          statistiques sont actualisées toutes les 30 secondes ; aucune adresse
+          IP ni identité de visiteur n&apos;est conservée.
         </p>
         {analyticsError ? (
           <p className="admin-payment-message" role="alert">
             {analyticsError}
           </p>
         ) : analytics ? (
-          <>
-            <div className="admin-analytics-summary">
-              <div>
-                <strong>{analytics.todayVisits.toLocaleString("fr-FR")}</strong>
-                <span>consultations aujourd&apos;hui</span>
-              </div>
-              <div>
-                <strong>{analytics.totalVisits.toLocaleString("fr-FR")}</strong>
-                <span>consultations sur 30 jours</span>
-              </div>
+          <div className="admin-analytics-dashboard">
+            <div className="admin-analytics-total">
+              <i className="fa-solid fa-eye" aria-hidden="true"></i>
+              <span>VISITES TOTALES</span>
+              <strong>{analytics.totalVisits.toLocaleString("fr-FR")}</strong>
             </div>
-            <h3>Répartition approximative par pays</h3>
-            {analytics.byCountry.length === 0 ? (
-              <p>Aucune visite consentie enregistrée pour le moment.</p>
-            ) : (
-              <ul className="admin-analytics-countries">
-                {analytics.byCountry.map(({ country, visits }) => {
-                  const countryName =
-                    country === "UNKNOWN"
-                      ? "Pays indisponible"
-                      : new Intl.DisplayNames(["fr"], { type: "region" }).of(
-                          country,
-                        ) ?? country;
-                  return (
+            <div className="admin-analytics-origins">
+              <h3>
+                <i className="fa-solid fa-earth-europe" aria-hidden="true"></i>{" "}
+                Origen de los visitantes
+              </h3>
+              <div className="admin-analytics-country-header">
+                <span>País / Código</span>
+                <span>Visitas</span>
+              </div>
+              {analytics.byCountry.length === 0 ? (
+                <p>Aucune visite enregistrée pour le moment.</p>
+              ) : (
+                <ul className="admin-analytics-countries">
+                  {analytics.byCountry.map(({ country, visits }) => (
                     <li key={country}>
-                      <span>{countryName}</span>
+                      <span>
+                        <i className="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        {country === "UNKNOWN" ? "Desconocido" : country}
+                      </span>
                       <strong>{visits.toLocaleString("fr-FR")}</strong>
                     </li>
-                  );
-                })}
-              </ul>
-            )}
-          </>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
         ) : (
           <p>Chargement des statistiques...</p>
         )}
