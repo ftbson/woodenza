@@ -44,7 +44,28 @@ export default function PrivacyPolicyPage() {
           </p>
         </section>
         <section className="legal-section">
-          <h2>5. Cómo ejercer tus derechos</h2>
+          <h2>5. Estadísticas anónimas de uso</h2>
+          <p>
+            Solo si aceptas las estadísticas en el aviso que aparece en la
+            web, contamos las páginas consultadas y agrupamos los totales por
+            día y, cuando el proveedor de alojamiento ofrece ese dato, por
+            país aproximado. No guardamos direcciones IP, identificadores de
+            visitantes ni páginas individuales. Los totales se conservan
+            durante un máximo de 90 días y después se eliminan. Puedes rechazar
+            estas estadísticas sin que ello afecte al uso de la tienda, y
+            cambiar tu elección desde el botón «Privacidad» de la web.
+          </p>
+          <p>
+            Para recordar tu elección, guardamos una preferencia en el
+            almacenamiento local de tu navegador. El servidor y el proveedor
+            de alojamiento pueden tratar temporalmente datos técnicos,
+            incluida la dirección IP, para transmitir la solicitud y ofrecer
+            el país aproximado; Woodenza no conserva la dirección IP en sus
+            estadísticas.
+          </p>
+        </section>
+        <section className="legal-section">
+          <h2>6. Cómo ejercer tus derechos</h2>
           <p>
             Puedes pedir acceso a tus datos, solicitar que se rectifiquen o
             eliminen, limitar ciertos usos u obtener su portabilidad; también
@@ -54,7 +75,7 @@ export default function PrivacyPolicyPage() {
           </p>
         </section>
         <section className="legal-section">
-          <h2>6. Protección de la información y reclamaciones</h2>
+          <h2>7. Protección de la información y reclamaciones</h2>
           <p>
             Adoptamos medidas razonables para proteger la información personal.
             Si lo consideras necesario, puedes presentar una reclamación ante
@@ -62,7 +83,7 @@ export default function PrivacyPolicyPage() {
           </p>
         </section>
         <p className="legal-updated">
-          Última actualización: 17 de septiembre de 2026
+          Última actualización: 25 de octubre de 2026
         </p>
       </div>
     </article>

@@ -26,7 +26,7 @@ const features: Feature[] = [
     icon: "fa-solid fa-shield-halved",
     title: "Opciones de pago seguras",
     description:
-      "Elige entre tarjeta bancaria, Wero o transferencia bancaria durante el pago.",
+      "Elige entre tarjeta bancaria, Bizum o transferencia bancaria durante el pago.",
   },
   {
     icon: "fa-solid fa-headset",

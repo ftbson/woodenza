@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import { weroSettings } from "@/lib/schema";
+import { bizumSettings } from "@/lib/schema";
 
 export async function GET() {
   try {
-    const [settings] = await db.select().from(weroSettings).limit(1);
+    const [settings] = await db.select().from(bizumSettings).limit(1);
     return NextResponse.json(
       settings?.enabled
         ? {
@@ -16,9 +16,9 @@ export async function GET() {
       { headers: { "Cache-Control": "no-store" } },
     );
   } catch (error) {
-    console.error("Erreur de chargement des coordonnées Wero :", error);
+    console.error("Erreur de chargement des coordonnées Bizum :", error);
     return NextResponse.json(
-      { error: "Impossible de charger les coordonnées Wero." },
+      { error: "Impossible de charger les coordonnées Bizum." },
       { status: 500 },
     );
   }

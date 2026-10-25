@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AnalyticsConsent from "@/components/AnalyticsConsent";
 
 export default function SiteFrame({
   children,
@@ -31,6 +32,7 @@ export default function SiteFrame({
         {children}
       </main>
       {!isAdminPage && <Footer />}
+      {!isAdminPage && <AnalyticsConsent />}
     </div>
   );
 }

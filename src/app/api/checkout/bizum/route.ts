@@ -1,12 +1,12 @@
 import { NextResponse } from "next/server";
 import { db } from "@/lib/db";
-import { orders, weroSettings } from "@/lib/schema";
+import { orders, bizumSettings } from "@/lib/schema";
 import { productsData } from "@/data/products";
 
 export async function POST(request: Request) {
   try {
     const { customer, items } = await request.json();
-    const [settings] = await db.select().from(weroSettings).limit(1);
+    const [settings] = await db.select().from(bizumSettings).limit(1);
 
     if (
       !settings?.enabled ||
@@ -14,7 +14,7 @@ export async function POST(request: Request) {
       !settings.phoneNumber
     ) {
       return NextResponse.json(
-        { error: "El pago mediante Wero no está disponible en este momento." },
+        { error: "El pago mediante Bizum no está disponible en este momento." },
         { status: 503 },
       );
     }
@@ -60,7 +60,7 @@ export async function POST(request: Request) {
       shippingCost,
       grandTotal,
       status: "pending",
-      paymentMethod: "wero",
+      paymentMethod: "bizum",
       paymentStatus: "pending",
       createdAt: new Date().toISOString(),
     });
@@ -68,13 +68,13 @@ export async function POST(request: Request) {
     return NextResponse.json({
       orderId,
       grandTotal,
-      weroDetails: {
+      bizumDetails: {
         recipientName: settings.recipientName,
         phoneNumber: settings.phoneNumber,
       },
     });
   } catch (error) {
-    console.error("Error al registrar el pedido de Wero:", error);
+    console.error("Error al registrar el pedido de Bizum:", error);
     return NextResponse.json(
       { error: "No se ha podido registrar el pedido." },
       { status: 500 },

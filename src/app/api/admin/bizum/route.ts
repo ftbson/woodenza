@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { db } from "@/lib/db";
-import { weroSettings } from "@/lib/schema";
+import { bizumSettings } from "@/lib/schema";
 
 async function isAdmin() {
   return (
@@ -16,7 +16,7 @@ export async function GET() {
   }
 
   try {
-    const [settings] = await db.select().from(weroSettings).limit(1);
+    const [settings] = await db.select().from(bizumSettings).limit(1);
     return NextResponse.json(
       settings ?? {
         recipientName: "",
@@ -25,9 +25,9 @@ export async function GET() {
       },
     );
   } catch (error) {
-    console.error("Erreur de chargement du paramétrage Wero :", error);
+    console.error("Erreur de chargement du paramétrage Bizum :", error);
     return NextResponse.json(
-      { error: "Impossible de charger le paramétrage Wero." },
+      { error: "Impossible de charger le paramétrage Bizum." },
       { status: 500 },
     );
   }
@@ -52,7 +52,7 @@ export async function PUT(request: Request) {
       (enabled && (!recipientName || !phoneNumber))
     ) {
       return NextResponse.json(
-        { error: "Le nom et le numéro Wero sont requis pour activer Wero." },
+        { error: "Le nom et le numéro Bizum sont requis pour activer Bizum." },
         { status: 400 },
       );
     }
@@ -65,21 +65,21 @@ export async function PUT(request: Request) {
       updatedAt: new Date().toISOString(),
     };
     const [existing] = await db
-      .select({ id: weroSettings.id })
-      .from(weroSettings)
+      .select({ id: bizumSettings.id })
+      .from(bizumSettings)
       .limit(1);
 
     if (existing) {
-      await db.update(weroSettings).set(values);
+      await db.update(bizumSettings).set(values);
     } else {
-      await db.insert(weroSettings).values(values);
+      await db.insert(bizumSettings).values(values);
     }
 
     return NextResponse.json({ success: true, ...values });
   } catch (error) {
-    console.error("Erreur d'enregistrement du paramétrage Wero :", error);
+    console.error("Erreur d'enregistrement du paramétrage Bizum :", error);
     return NextResponse.json(
-      { error: "Impossible d'enregistrer le paramétrage Wero." },
+      { error: "Impossible d'enregistrer le paramétrage Bizum." },
       { status: 500 },
     );
   }

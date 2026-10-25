@@ -14,7 +14,7 @@ type Customer = {
   email: string;
 };
 
-type WeroDetails = {
+type BizumDetails = {
   enabled: boolean;
   recipientName?: string;
   phoneNumber?: string;
@@ -27,7 +27,7 @@ type BankTransferDetails = {
   bic?: string;
 };
 
-type PaymentMethod = "stripe" | "wero" | "bank_transfer";
+type PaymentMethod = "stripe" | "bizum" | "bank_transfer";
 
 const emptyCustomer: Customer = {
   firstName: "",
@@ -42,7 +42,7 @@ export default function CartPage() {
   const { cart, removeFromCart, updateQuantity, subtotal, clearCart } =
     useCart();
   const [customer, setCustomer] = useState<Customer>(emptyCustomer);
-  const [weroDetails, setWeroDetails] = useState<WeroDetails | null>(null);
+  const [bizumDetails, setBizumDetails] = useState<BizumDetails | null>(null);
   const [bankTransferDetails, setBankTransferDetails] =
     useState<BankTransferDetails | null>(null);
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("stripe");
@@ -52,12 +52,12 @@ export default function CartPage() {
   const grandTotal = subtotal + shippingCost;
 
   useEffect(() => {
-    fetch("/api/wero")
+    fetch("/api/bizum")
       .then(async (response) => {
-        if (!response.ok) throw new Error("No ha sido posible consultar la disponibilidad de Wero.");
-        setWeroDetails(await response.json());
+        if (!response.ok) throw new Error("No ha sido posible consultar la disponibilidad de Bizum.");
+        setBizumDetails(await response.json());
       })
-      .catch(() => setWeroDetails({ enabled: false }));
+      .catch(() => setBizumDetails({ enabled: false }));
 
     fetch("/api/bank-transfer")
       .then(async (response) => {
@@ -77,7 +77,7 @@ export default function CartPage() {
     try {
       const checkoutRoutes: Record<PaymentMethod, string> = {
         stripe: "/api/checkout/stripe",
-        wero: "/api/checkout/wero",
+        bizum: "/api/checkout/bizum",
         bank_transfer: "/api/checkout/bank-transfer",
       };
       const response = await fetch(checkoutRoutes[paymentMethod], {
@@ -98,9 +98,9 @@ export default function CartPage() {
         return;
       }
 
-      if (paymentMethod === "wero") {
+      if (paymentMethod === "bizum") {
         setMessage(
-          `Hemos registrado el pedido ${data.orderId}. Envía ${data.grandTotal.toFixed(2)} € por Wero al ${data.weroDetails.phoneNumber}, a nombre de ${data.weroDetails.recipientName}.`,
+          `Hemos registrado el pedido ${data.orderId}. Envía ${data.grandTotal.toFixed(2)} € por Bizum al ${data.bizumDetails.phoneNumber}, a nombre de ${data.bizumDetails.recipientName}.`,
         );
       } else {
         const { accountName, iban, bic } = data.bankDetails;
@@ -267,13 +267,13 @@ export default function CartPage() {
                   <input
                     type="radio"
                     name="payment-method"
-                    value="wero"
-                    checked={paymentMethod === "wero"}
-                    disabled={!weroDetails?.enabled}
-                    onChange={() => setPaymentMethod("wero")}
+                    value="bizum"
+                    checked={paymentMethod === "bizum"}
+                    disabled={!bizumDetails?.enabled}
+                    onChange={() => setPaymentMethod("bizum")}
                   />
-                  Wero
-                  {!weroDetails?.enabled && " (temporalmente no disponible)"}
+                  Bizum
+                  {!bizumDetails?.enabled && " (temporalmente no disponible)"}
                 </label>
                 <label>
                   <input
@@ -288,29 +288,29 @@ export default function CartPage() {
                   {!bankTransferDetails?.enabled && " (temporalmente no disponible)"}
                 </label>
               </div>
-              {paymentMethod === "wero" && weroDetails?.enabled ? (
+              {paymentMethod === "bizum" && bizumDetails?.enabled ? (
                 <div className="bank-transfer-details" role="status">
-                  <strong>Datos de Wero</strong>
-                  {weroDetails.recipientName && (
+                  <strong>Datos de Bizum</strong>
+                  {bizumDetails.recipientName && (
                     <p>
-                      <span>Beneficiario</span> {weroDetails.recipientName}
+                      <span>Beneficiario</span> {bizumDetails.recipientName}
                     </p>
                   )}
-                  {weroDetails.phoneNumber && (
+                  {bizumDetails.phoneNumber && (
                     <p>
-                      <span>Número</span> {weroDetails.phoneNumber}
+                      <span>Número</span> {bizumDetails.phoneNumber}
                     </p>
                   )}
                   <p className="bank-transfer-reference">
-                    Completa el pago desde Wero. El pedido quedará pendiente
+                    Completa el pago desde Bizum. El pedido quedará pendiente
                     de verificación.
                   </p>
                 </div>
-              ) : paymentMethod === "wero" ? (
+              ) : paymentMethod === "bizum" ? (
                 <p className="checkout-message">
-                  {weroDetails === null
-                    ? "Consultando los datos de Wero..."
-                    : "Wero todavía no está configurado. Contacta con nosotros si quieres completar el pedido con este método."}
+                  {bizumDetails === null
+                    ? "Consultando los datos de Bizum..."
+                    : "Bizum todavía no está configurado. Contacta con nosotros si quieres completar el pedido con este método."}
                 </p>
               ) : paymentMethod === "bank_transfer" &&
                 bankTransferDetails?.enabled ? (
@@ -350,7 +350,7 @@ export default function CartPage() {
                 type="submit"
                 disabled={
                   loading ||
-                  (paymentMethod === "wero" && !weroDetails?.enabled) ||
+                  (paymentMethod === "bizum" && !bizumDetails?.enabled) ||
                   (paymentMethod === "bank_transfer" &&
                     !bankTransferDetails?.enabled)
                 }
@@ -360,8 +360,8 @@ export default function CartPage() {
                   : `Confirmar pedido con ${
                       paymentMethod === "stripe"
                         ? "Stripe"
-                        : paymentMethod === "wero"
-                          ? "Wero"
+                        : paymentMethod === "bizum"
+                          ? "Bizum"
                           : "transferencia bancaria"
                     }`}
                 <i className="fa-solid fa-arrow-right"></i>

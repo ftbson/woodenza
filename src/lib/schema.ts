@@ -20,12 +20,19 @@ export const orders = sqliteTable("orders", {
   createdAt: text("created_at").$defaultFn(() => new Date().toISOString()),
 });
 
-export const weroSettings = sqliteTable("wero_settings", {
+export const bizumSettings = sqliteTable("bizum_settings", {
   id: text("id").primaryKey(),
   recipientName: text("recipient_name").notNull().default(""),
   phoneNumber: text("phone_number").notNull().default(""),
   enabled: integer("enabled", { mode: "boolean" }).notNull().default(false),
   updatedAt: text("updated_at").$defaultFn(() => new Date().toISOString()),
+});
+
+export const analyticsVisits = sqliteTable("analytics_visits", {
+  id: text("id").primaryKey(),
+  visitDate: text("visit_date").notNull(),
+  country: text("country").notNull(),
+  visits: integer("visits").notNull().default(0),
 });
 
 export const bankTransferSettings = sqliteTable("bank_transfer_settings", {

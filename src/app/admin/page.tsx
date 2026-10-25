@@ -22,10 +22,16 @@ interface Order {
   createdAt: string;
 }
 
-interface WeroSettings {
+interface BizumSettings {
   recipientName: string;
   phoneNumber: string;
   enabled: boolean;
+}
+
+interface AnalyticsSummary {
+  totalVisits: number;
+  todayVisits: number;
+  byCountry: { country: string; visits: number }[];
 }
 
 interface BankTransferSettings {
@@ -43,13 +49,15 @@ export default function AdminPage() {
 
   const [orders, setOrders] = useState<Order[]>([]);
   const [loadingOrders, setLoadingOrders] = useState(false);
-  const [weroSettings, setWeroSettings] = useState<WeroSettings>({
+  const [bizumSettings, setBizumSettings] = useState<BizumSettings>({
     recipientName: "",
     phoneNumber: "",
     enabled: false,
   });
-  const [savingWero, setSavingWero] = useState(false);
-  const [weroMessage, setWeroMessage] = useState("");
+  const [savingBizum, setSavingBizum] = useState(false);
+  const [bizumMessage, setBizumMessage] = useState("");
+  const [analytics, setAnalytics] = useState<AnalyticsSummary | null>(null);
+  const [analyticsError, setAnalyticsError] = useState("");
   const [bankTransferSettings, setBankTransferSettings] =
     useState<BankTransferSettings>({
       accountName: "",
@@ -74,13 +82,13 @@ export default function AdminPage() {
             if (ordersResponse.ok) setOrders(await ordersResponse.json());
           })
           .catch(() => undefined);
-        fetch("/api/admin/wero")
+        fetch("/api/admin/bizum")
           .then(async (settingsResponse) => {
             if (settingsResponse.ok)
-              setWeroSettings(await settingsResponse.json());
+              setBizumSettings(await settingsResponse.json());
           })
           .catch(() =>
-            setWeroMessage("Impossible de charger le paramétrage Wero."),
+            setBizumMessage("Impossible de charger le paramétrage Bizum."),
           );
         fetch("/api/admin/bank-transfer")
           .then(async (settingsResponse) => {
@@ -100,6 +108,38 @@ export default function AdminPage() {
       .catch(() => setIsAuthenticated(false));
   }, []);
 
+  useEffect(() => {
+    if (isAuthenticated !== true) return;
+
+    let active = true;
+    const loadAnalytics = async () => {
+      try {
+        const response = await fetch("/api/admin/analytics");
+        if (!response.ok)
+          throw new Error("Impossible de charger les statistiques de visite.");
+        const data: AnalyticsSummary = await response.json();
+        if (active) {
+          setAnalytics(data);
+          setAnalyticsError("");
+        }
+      } catch (error) {
+        if (active)
+          setAnalyticsError(
+            error instanceof Error
+              ? error.message
+              : "Impossible de charger les statistiques de visite.",
+          );
+      }
+    };
+
+    void loadAnalytics();
+    const interval = window.setInterval(() => void loadAnalytics(), 30_000);
+    return () => {
+      active = false;
+      window.clearInterval(interval);
+    };
+  }, [isAuthenticated]);
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoginError("");
@@ -114,7 +154,7 @@ export default function AdminPage() {
       if (res.ok) {
         setIsAuthenticated(true);
         loadOrders();
-        loadWeroSettings();
+        loadBizumSettings();
         loadBankTransferSettings();
       } else {
         const data = await res.json();
@@ -145,12 +185,12 @@ export default function AdminPage() {
     }
   };
 
-  const loadWeroSettings = async () => {
+  const loadBizumSettings = async () => {
     try {
-      const response = await fetch("/api/admin/wero");
-      if (response.ok) setWeroSettings(await response.json());
+      const response = await fetch("/api/admin/bizum");
+      if (response.ok) setBizumSettings(await response.json());
     } catch {
-      setWeroMessage("Impossible de charger le paramétrage Wero.");
+      setBizumMessage("Impossible de charger le paramétrage Bizum.");
     }
   };
 
@@ -193,27 +233,27 @@ export default function AdminPage() {
     }
   };
 
-  const saveWeroSettings = async (event: React.FormEvent) => {
+  const saveBizumSettings = async (event: React.FormEvent) => {
     event.preventDefault();
-    setSavingWero(true);
-    setWeroMessage("");
+    setSavingBizum(true);
+    setBizumMessage("");
     try {
-      const response = await fetch("/api/admin/wero", {
+      const response = await fetch("/api/admin/bizum", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(weroSettings),
+        body: JSON.stringify(bizumSettings),
       });
       const data = await response.json();
       if (!response.ok)
         throw new Error(data.error || "Enregistrement impossible.");
-      setWeroSettings(data);
-      setWeroMessage("Coordonnées Wero enregistrées.");
+      setBizumSettings(data);
+      setBizumMessage("Coordonnées Bizum enregistrées.");
     } catch (error) {
-      setWeroMessage(
+      setBizumMessage(
         error instanceof Error ? error.message : "Enregistrement impossible.",
       );
     } finally {
-      setSavingWero(false);
+      setSavingBizum(false);
     }
   };
 
@@ -289,15 +329,15 @@ export default function AdminPage() {
       </div>
 
       <section className="admin-payment-settings">
-        <h2>Paramétrage du paiement Wero</h2>
-        <form onSubmit={saveWeroSettings}>
+        <h2>Paramétrage du paiement Bizum</h2>
+        <form onSubmit={saveBizumSettings}>
           <label>
             Nom du bénéficiaire
             <input
-              required={weroSettings.enabled}
-              value={weroSettings.recipientName}
+              required={bizumSettings.enabled}
+              value={bizumSettings.recipientName}
               onChange={(event) =>
-                setWeroSettings((current) => ({
+                setBizumSettings((current) => ({
                   ...current,
                   recipientName: event.target.value,
                 }))
@@ -306,12 +346,12 @@ export default function AdminPage() {
             />
           </label>
           <label>
-            Numéro Wero
+            Numéro Bizum
             <input
-              required={weroSettings.enabled}
-              value={weroSettings.phoneNumber}
+              required={bizumSettings.enabled}
+              value={bizumSettings.phoneNumber}
               onChange={(event) =>
-                setWeroSettings((current) => ({
+                setBizumSettings((current) => ({
                   ...current,
                   phoneNumber: event.target.value,
                 }))
@@ -319,28 +359,78 @@ export default function AdminPage() {
               maxLength={40}
             />
           </label>
-          <label className="admin-wero-enabled">
+          <label className="admin-payment-enabled">
             <input
               type="checkbox"
-              checked={weroSettings.enabled}
+              checked={bizumSettings.enabled}
               onChange={(event) =>
-                setWeroSettings((current) => ({
+                setBizumSettings((current) => ({
                   ...current,
                   enabled: event.target.checked,
                 }))
               }
             />
-            Activer Wero au paiement
+            Activer Bizum au paiement
           </label>
           <button
             type="submit"
             className="admin-btn-primary"
-            disabled={savingWero}
+            disabled={savingBizum}
           >
-            {savingWero ? "Enregistrement..." : "Enregistrer Wero"}
+            {savingBizum ? "Enregistrement..." : "Enregistrer Bizum"}
           </button>
         </form>
-        {weroMessage && <p className="admin-wero-message">{weroMessage}</p>}
+        {bizumMessage && <p className="admin-payment-message">{bizumMessage}</p>}
+      </section>
+
+      <section className="admin-payment-settings">
+        <h2>Statistiques de fréquentation</h2>
+        <p className="admin-analytics-description">
+          Données agrégées des 30 derniers jours, actualisées toutes les 30
+          secondes. Aucune adresse IP ni identifiant de visiteur n&apos;est
+          conservé.
+        </p>
+        {analyticsError ? (
+          <p className="admin-payment-message" role="alert">
+            {analyticsError}
+          </p>
+        ) : analytics ? (
+          <>
+            <div className="admin-analytics-summary">
+              <div>
+                <strong>{analytics.todayVisits.toLocaleString("fr-FR")}</strong>
+                <span>consultations aujourd&apos;hui</span>
+              </div>
+              <div>
+                <strong>{analytics.totalVisits.toLocaleString("fr-FR")}</strong>
+                <span>consultations sur 30 jours</span>
+              </div>
+            </div>
+            <h3>Répartition approximative par pays</h3>
+            {analytics.byCountry.length === 0 ? (
+              <p>Aucune visite consentie enregistrée pour le moment.</p>
+            ) : (
+              <ul className="admin-analytics-countries">
+                {analytics.byCountry.map(({ country, visits }) => {
+                  const countryName =
+                    country === "UNKNOWN"
+                      ? "Pays indisponible"
+                      : new Intl.DisplayNames(["fr"], { type: "region" }).of(
+                          country,
+                        ) ?? country;
+                  return (
+                    <li key={country}>
+                      <span>{countryName}</span>
+                      <strong>{visits.toLocaleString("fr-FR")}</strong>
+                    </li>
+                  );
+                })}
+              </ul>
+            )}
+          </>
+        ) : (
+          <p>Chargement des statistiques...</p>
+        )}
       </section>
 
       <section className="admin-payment-settings">
@@ -389,7 +479,7 @@ export default function AdminPage() {
               autoComplete="off"
             />
           </label>
-          <label className="admin-wero-enabled">
+          <label className="admin-payment-enabled">
             <input
               type="checkbox"
               checked={bankTransferSettings.enabled}
@@ -413,7 +503,7 @@ export default function AdminPage() {
           </button>
         </form>
         {bankTransferMessage && (
-          <p className="admin-wero-message" role="status">
+          <p className="admin-payment-message" role="status">
             {bankTransferMessage}
           </p>
         )}
@@ -467,8 +557,8 @@ export default function AdminPage() {
                   </td>
                   <td>
                     <strong>
-                      {order.paymentMethod === "wero"
-                        ? "Wero"
+                      {order.paymentMethod === "bizum"
+                        ? "Bizum"
                         : order.paymentMethod === "stripe"
                           ? "Stripe"
                           : "Virement"}
