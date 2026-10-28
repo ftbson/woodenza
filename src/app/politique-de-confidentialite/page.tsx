@@ -2,84 +2,87 @@ export default function PrivacyPolicyPage() {
   return (
     <article className="legal-page">
       <div className="legal-container">
-        <span className="section-subtitle">Privacidad y datos personales</span>
-        <h1 className="legal-title">Política de privacidad</h1>
+        <span className="section-subtitle">Datenschutz und persönliche Daten</span>
+        <h1 className="legal-title">Datenschutzerklärung</h1>
         <p className="legal-intro">
-          Te explicamos qué información personal podemos tratar, con qué
-          finalidad y qué opciones tienes para ejercer tus derechos.
+          Wir erklären Ihnen, welche personenbezogenen Daten wir erheben zu
+          welchen Zwecken dies geschieht und welche Möglichkeiten Sie haben,
+          Ihre Rechte geltend zu machen.
         </p>
 
         <section className="legal-section">
-          <h2>1. Información que podemos recoger</h2>
+          <h2>1. Informationen, die wir erheben</h2>
           <p>
-            Cuando compras o nos escribes, podemos solicitar tu nombre y
-            apellidos, domicilio de entrega, correo electrónico, teléfono y
-            otros datos necesarios para gestionar y seguir el pedido.
+            Wenn Sie einen Kauf tätigen oder uns schreiben, können wir Ihren Namen,
+            Ihre Lieferadresse, Ihre E-Mail-Adresse, Ihre Telefonnummer sowie
+            weitere Daten anfordern, die zur Bearbeitung und Nachverfolgung der
+            Bestellung erforderlich sind.
           </p>
         </section>
         <section className="legal-section">
-          <h2>2. Uso de los datos y fundamento del tratamiento</h2>
+          <h2>2. Verwendung der Daten und Rechtsgrundlage</h2>
           <p>
-            Utilizamos esta información para tramitar compras, coordinar
-            entregas, contestar tus consultas y atender obligaciones legales y
-            contables. El tratamiento se apoya principalmente en la ejecución
-            del contrato, en una obligación legal o en tu consentimiento,
-            según corresponda.
+            Wir verwenden diese Informationen, um Käufe abzuwickeln, Lieferungen
+            zu koordinieren, Ihre Anfragen zu beantworten sowie gesetzliche und
+            steuerliche Verpflichtungen zu erfüllen. Die Verarbeitung stützt sich
+            hauptsächlich auf die Vertragserfüllung, eine rechtliche Verpflichtung
+            oder Ihre Einwilligung, je nach Fall.
           </p>
         </section>
         <section className="legal-section">
-          <h2>3. Acceso a los datos y plazo de conservación</h2>
+          <h2>3. Datenzugriff und Speicherdauer</h2>
           <p>
-            Compartimos los datos únicamente con las personas y proveedores
-            que participan en el pago, el transporte, el alojamiento o el
-            funcionamiento de la web. Los conservamos mientras sean necesarios
-            para estos fines y durante los periodos exigidos por la ley.
+            Wir geben Daten ausschließlich an Personen und Dienstleister weiter,
+            die an der Bezahlung, dem Transport, dem Hosting oder dem Betrieb der
+            Website beteiligt sind. Wir speichern sie so lange, wie es für diese
+            Zwecke erforderlich ist und die gesetzlichen Aufbewahrungsfristen es
+            vorschreiben.
           </p>
         </section>
         <section className="legal-section">
-          <h2>4. Tratamiento de la información de pago</h2>
+          <h2>4. Verarbeitung von Zahlungsinformationen</h2>
           <p>
-            Nuestro proveedor de pagos procesa las operaciones con tarjeta.
-            Woodenza no guarda el número completo de tu tarjeta bancaria.
+            Unser Zahlungsdienstleister wickelt die Kartenzahlungen ab.
+            Holzvanta speichert Ihre vollständige Kreditkartennummer nicht.
           </p>
         </section>
         <section className="legal-section">
-          <h2>5. Estadísticas anónimas de uso</h2>
+          <h2>5. Anonyme Nutzungsstatistiken</h2>
           <p>
-            Contamos las páginas consultadas y agrupamos los totales por día y,
-            cuando el proveedor de alojamiento ofrece ese dato, por país
-            aproximado. No guardamos direcciones IP, identificadores de
-            visitantes ni páginas individuales. Los totales agregados se
-            conservan para mostrar las visitas acumuladas.
+            Wir zählen die aufgerufenen Seiten und fassen die Gesamtzahlen nach
+            Tagen und – sofern vom Hosting-Anbieter bereitgestellt – nach ungefährem
+            Land zusammen. Wir speichern keine IP-Adressen, Besucher-IDs oder
+            einzelne Seiten. Die aggregierten Gesamtzahlen werden gespeichert,
+            um die Gesamtzahl der Besuche anzuzeigen.
           </p>
           <p>
-            El servidor y el proveedor de alojamiento pueden tratar
-            temporalmente datos técnicos, incluida la dirección IP, para
-            transmitir la solicitud y ofrecer el país aproximado; Woodenza no
-            conserva la dirección IP en sus estadísticas. En la web mostramos
-            un aviso sobre este recuento.
-          </p>
-        </section>
-        <section className="legal-section">
-          <h2>6. Cómo ejercer tus derechos</h2>
-          <p>
-            Puedes pedir acceso a tus datos, solicitar que se rectifiquen o
-            eliminen, limitar ciertos usos u obtener su portabilidad; también
-            puedes oponerte a determinados tratamientos. Escríbenos a
-            info@bonboisfr.fr e incluye tu solicitud y el correo usado en la
-            compra.
+            Der Server und der Hosting-Anbieter können technische Daten,
+            einschließlich der IP-Adresse, vorübergehend verarbeiten, um die
+            Anfrage zu übermitteln und das ungefähre Land zu bestimmen; Holzvanta
+            speichert die IP-Adresse nicht in seinen Statistiken. Auf der Website
+            weisen wir auf diese Zählung hin.
           </p>
         </section>
         <section className="legal-section">
-          <h2>7. Protección de la información y reclamaciones</h2>
+          <h2>6. Wie Sie Ihre Rechte ausüben können</h2>
           <p>
-            Adoptamos medidas razonables para proteger la información personal.
-            Si lo consideras necesario, puedes presentar una reclamación ante
-            la autoridad de protección de datos competente.
+            Sie können Auskunft über Ihre Daten verlangen, deren Berichtigung oder
+            Löschung beantragen, bestimmte Verwendungszwecke einschränken oder
+            die Datenübertragbarkeit fordern; Sie können auch der Verarbeitung
+            widersprechen. Schreiben Sie uns an info@holzvanta.de und fügen Sie
+            Ihre Anfrage sowie die beim Kauf verwendete E-Mail-Adresse bei.
+          </p>
+        </section>
+        <section className="legal-section">
+          <h2>7. Schutz der Informationen und Beschwerden</h2>
+          <p>
+            Wir treffen angemessene Maßnahmen zum Schutz personenbezogener Daten.
+            Falls erforderlich, können Sie eine Beschwerde bei der zuständigen
+            Datenschutzaufsichtsbehörde einreichen.
           </p>
         </section>
         <p className="legal-updated">
-          Última actualización: 25 de octubre de 2026
+          Letzte Aktualisierung: 25. Oktober 2026
         </p>
       </div>
     </article>

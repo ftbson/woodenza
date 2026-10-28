@@ -32,7 +32,7 @@ type PaymentMethod = "stripe" | "bizum" | "bank_transfer";
 const emptyCustomer: Customer = {
   firstName: "",
   lastName: "",
-  country: "Espana",
+  country: "Deutschland",
   streetAddress: "",
   whatsapp: "",
   email: "",
@@ -54,14 +54,18 @@ export default function CartPage() {
   useEffect(() => {
     fetch("/api/bizum")
       .then(async (response) => {
-        if (!response.ok) throw new Error("No ha sido posible consultar la disponibilidad de Bizum.");
+        if (!response.ok)
+          throw new Error(
+            "No ha sido posible consultar la disponibilidad de Bizum.",
+          );
         setBizumDetails(await response.json());
       })
       .catch(() => setBizumDetails({ enabled: false }));
 
     fetch("/api/bank-transfer")
       .then(async (response) => {
-        if (!response.ok) throw new Error("No ha sido posible consultar los datos bancarios.");
+        if (!response.ok)
+          throw new Error("No ha sido posible consultar los datos bancarios.");
         setBankTransferDetails(await response.json());
       })
       .catch(() => setBankTransferDetails({ enabled: false }));
@@ -93,7 +97,9 @@ export default function CartPage() {
         throw new Error(data.error || "No se pudo completar el pedido.");
       if (paymentMethod === "stripe") {
         if (!data.url)
-          throw new Error("No se recibió el enlace para continuar con el pago.");
+          throw new Error(
+            "No se recibió el enlace para continuar con el pago.",
+          );
         window.location.assign(data.url);
         return;
       }
@@ -118,7 +124,9 @@ export default function CartPage() {
       clearCart();
     } catch (error) {
       setMessage(
-        error instanceof Error ? error.message : "No se pudo completar el pedido.",
+        error instanceof Error
+          ? error.message
+          : "No se pudo completar el pedido.",
       );
     } finally {
       setLoading(false);
@@ -134,7 +142,10 @@ export default function CartPage() {
             {message && <p className="checkout-message">{message}</p>}
             <i className="fa-solid fa-basket-shopping empty-icon"></i>
             <h2>Aún no has añadido productos</h2>
-            <p>Explora el catálogo y encuentra leña, pellets o una estufa para tu hogar.</p>
+            <p>
+              Explora el catálogo y encuentra leña, pellets o una estufa para tu
+              hogar.
+            </p>
             <Link href="/boutique" className="btn-primary-cart">
               Ir al catálogo
             </Link>
@@ -243,7 +254,7 @@ export default function CartPage() {
                 <span>Coste de envío</span>
                 <span>
                   {shippingCost === 0
-                    ?                     "Sin coste"
+                    ? "Sin coste"
                     : `${shippingCost.toFixed(2).replace(".", ",")} €`}
                 </span>
               </div>
@@ -285,7 +296,8 @@ export default function CartPage() {
                     onChange={() => setPaymentMethod("bank_transfer")}
                   />
                   Transferencia bancaria
-                  {!bankTransferDetails?.enabled && " (temporalmente no disponible)"}
+                  {!bankTransferDetails?.enabled &&
+                    " (temporalmente no disponible)"}
                 </label>
               </div>
               {paymentMethod === "bizum" && bizumDetails?.enabled ? (
@@ -302,8 +314,8 @@ export default function CartPage() {
                     </p>
                   )}
                   <p className="bank-transfer-reference">
-                    Completa el pago desde Bizum. El pedido quedará pendiente
-                    de verificación.
+                    Completa el pago desde Bizum. El pedido quedará pendiente de
+                    verificación.
                   </p>
                 </div>
               ) : paymentMethod === "bizum" ? (

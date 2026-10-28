@@ -5,18 +5,18 @@ import SiteFrame from "@/components/SiteFrame";
 import { CartProvider } from "@/context/CartContext";
 
 export const metadata: Metadata = {
-  title: "Leña y pellets en Espana | Estufas de leña - Woodenza",
+  title: "Brennholz und Pellets in Deutschland | Kaminöfen - Holzvanta",
   description:
-    "Encuentra leña, pellets, briquetas y estufas para tu hogar. Combustibles seleccionados y entrega en Espana con Woodenza.",
+    "Finden Sie Brennholz, Pellets, Briketts und Öfen für Ihr Zuhause. Ausgewählte Brennstoffe und Lieferung in Deutschland mit Holzvanta.",
 };
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode; 
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
+    <html lang="de">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

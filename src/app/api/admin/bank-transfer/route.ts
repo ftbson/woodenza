@@ -13,7 +13,7 @@ async function isAdmin() {
 
 export async function GET() {
   if (!(await isAdmin())) {
-    return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
+    return NextResponse.json({ error: "Nicht autorisiert" }, { status: 401 });
   }
 
   try {
@@ -21,9 +21,9 @@ export async function GET() {
       headers: { "Cache-Control": "no-store" },
     });
   } catch (error) {
-    console.error("Erreur de chargement des coordonnées bancaires :", error);
+    console.error("Fehler beim Laden der Bankdaten:", error);
     return NextResponse.json(
-      { error: "Impossible de charger les coordonnées bancaires." },
+      { error: "Bankdaten konnten nicht geladen werden." },
       { status: 500 },
     );
   }
@@ -31,7 +31,7 @@ export async function GET() {
 
 export async function PUT(request: Request) {
   if (!(await isAdmin())) {
-    return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
+    return NextResponse.json({ error: "Nicht autorisiert" }, { status: 401 });
   }
 
   try {
@@ -53,7 +53,7 @@ export async function PUT(request: Request) {
       return NextResponse.json(
         {
           error:
-            "Le bénéficiaire et l'IBAN sont requis pour activer le virement bancaire.",
+            "Kontoinhaber und IBAN sind erforderlich, um die Banküberweisung zu aktivieren.",
         },
         { status: 400 },
       );
@@ -80,9 +80,9 @@ export async function PUT(request: Request) {
 
     return NextResponse.json({ success: true, ...values });
   } catch (error) {
-    console.error("Erreur d'enregistrement des coordonnées bancaires :", error);
+    console.error("Fehler beim Speichern der Bankdaten:", error);
     return NextResponse.json(
-      { error: "Impossible d'enregistrer les coordonnées bancaires." },
+      { error: "Bankdaten konnten nicht gespeichert werden." },
       { status: 500 },
     );
   }

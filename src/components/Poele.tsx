@@ -19,8 +19,8 @@ const products: Product[] = [
   {
     id: "poele-toron-50",
     discount: "-38 %",
-    category: "Estufas de leña",
-    title: "Estufa de leña DEVILLE TORON 50, 8 kW",
+    category: "Kaminöfen",
+    title: "Kaminofen DEVILLE TORON 50, 8 kW",
     rating: 5,
     reviewsCount: 214,
     oldPrice: 1342.00,
@@ -30,8 +30,8 @@ const products: Product[] = [
   {
     id: "poele-sara-12",
     discount: "-44 %",
-    category: "Estufas de leña",
-    title: "Estufa de leña INTERSTOVES SARA, 12 kW",
+    category: "Kaminöfen",
+    title: "Kaminofen INTERSTOVES SARA, 12 kW",
     rating: 5,
     reviewsCount: 431,
     oldPrice: 577.00,
@@ -41,8 +41,8 @@ const products: Product[] = [
   {
     id: "poele-sandy-8",
     discount: "-20 %",
-    category: "Estufas de leña",
-    title: "Estufa de leña DEVILLE SANDY 8 kW, versión LAB",
+    category: "Kaminöfen",
+    title: "Kaminofen DEVILLE SANDY 8 kW, LAB Ausführung",
     rating: 4.5,
     reviewsCount: 1142,
     price: 799.40,
@@ -51,8 +51,8 @@ const products: Product[] = [
   {
     id: "poele-lya-12",
     discount: "-22 %",
-    category: "Estufas de leña",
-    title: "Estufa de leña INTERSTOVES LYA, 12 kW",
+    category: "Kaminöfen",
+    title: "Kaminofen INTERSTOVES LYA, 12 kW",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 489.00,
@@ -62,8 +62,8 @@ const products: Product[] = [
   {
     id: "poele-alessia-14",
     discount: "-45 %",
-    category: "Estufas de leña",
-    title: "Estufa de leña INTERSTOVES ALESSIA, 14 kW",
+    category: "Kaminöfen",
+    title: "Kaminofen INTERSTOVES ALESSIA, 14 kW",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 577.00,
@@ -73,8 +73,8 @@ const products: Product[] = [
   {
     id: "poele-eguzki-6",
     discount: "-37 %",
-    category: "Estufas de leña",
-    title: "Estufa estanca de leña DEVILLE EGUZKI, 6 kW",
+    category: "Kaminöfen",
+    title: "Raumluftunabhängiger Kaminofen DEVILLE EGUZKI, 6 kW",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 2600.00,
@@ -89,20 +89,20 @@ export default function Poele() {
   return (
     <section className="bestsellers-section">
       <div className="bestsellers-container">
-        {/* Encabezado */}
+        {/* Überschrift */}
         <div className="bestsellers-header">
-          <h2 className="bestsellers-title">Estufas de leña para tu hogar</h2>
+          <h2 className="bestsellers-title">Kaminöfen für Ihr Zuhause</h2>
           <p className="bestsellers-subtitle">
-            Compara modelos de distintas potencias y encuentra el que se adapte a tu espacio.
+            Vergleichen Sie Modelle verschiedener Leistungsklassen und finden Sie das passende Modell für Ihren Raum.
           </p>
           <div className="bestsellers-line"></div>
         </div>
 
-        {/* Grille de produits */}
+        {/* Produktgitter */}
         <div className="products-grid">
           {products.map((product) => (
             <div key={product.id} className="product-card">
-              {/* Imagen y etiqueta de descuento */}
+              {/* Bild und Rabatt-Badge */}
               <div className="product-image-wrap">
                 <Image
                   src={product.image}
@@ -115,12 +115,12 @@ export default function Poele() {
                 )}
               </div>
 
-              {/* Detalles del producto */}
+              {/* Produktdetails */}
               <div className="product-info">
                 <span className="product-category">{product.category}</span>
                 <h3 className="product-title">{product.title}</h3>
 
-                {/* Valoraciones */}
+                {/* Bewertungen */}
                 <div className="product-rating">
                   <div className="stars">
                     {[...Array(5)].map((_, i) => (
@@ -135,7 +135,7 @@ export default function Poele() {
                   <span className="reviews-count">({product.reviewsCount})</span>
                 </div>
 
-                {/* Precio */}
+                {/* Preis */}
                 <div className="product-price-box">
                   {product.oldPrice && (
                     <span className="old-price">
@@ -147,7 +147,7 @@ export default function Poele() {
                   </span>
                 </div>
 
-                {/* Botón para añadir al carrito */}
+                {/* In den Warenkorb Button */}
                 <button
                   className="btn-add-cart"
                   onClick={() =>
@@ -158,12 +158,11 @@ export default function Poele() {
                       price: product.price,
                       oldPrice: product.oldPrice,
                       image: product.image,
-                      // quantity: 1,
                     })
                   }
                 >
                   <i className="fa-solid fa-cart-shopping"></i>
-                  Añadir a la cesta
+                  In den Warenkorb
                 </button>
               </div>
             </div>

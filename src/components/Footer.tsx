@@ -5,18 +5,18 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-container">
-        {/* Columna 1: marca, descripción y redes sociales */}
+        {/* Spalte 1: Marke, Beschreibung und soziale Netzwerke */}
         <div className="footer-col brand-col">
           <div className="footer-logo">
             <Image
               src="/img/woodenza.svg"
-              alt="Woodenza"
+              alt="Holzvanta"
               width={130}
               height={45}
             />
           </div>
           <p className="footer-description">
-            Leña y combustibles seleccionados para disfrutar de una calefacción eficiente y responsable.
+            Ausgewähltes Brennholz und Brennstoffe für effizientes und verantwortungsvolles Heizen.
           </p>
           <div className="social-links">
             <a href="#" aria-label="Facebook" className="social-icon">
@@ -28,92 +28,92 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Columna 2: productos */}
+        {/* Spalte 2: Produkte */}
         <div className="footer-col">
-          <h4 className="footer-heading">PRODUCTOS</h4>
+          <h4 className="footer-heading">PRODUKTE</h4>
           <ul className="footer-links-list">
             <li>
-              <Link href="/boutique">Leña</Link>
+              <Link href="/shop">Brennholz</Link>
             </li>
             <li>
-              <Link href="/boutique">Pellets</Link>
+              <Link href="/shop">Pellets</Link>
             </li>
             <li>
-              <Link href="/boutique">Briquetas de madera</Link>
+              <Link href="/shop">Holzbriketts</Link>
             </li>
             <li>
-              <Link href="/boutique">Leña compactada</Link>
+              <Link href="/shop">Gepresstes Brennholz</Link>
             </li>
             <li>
-              <Link href="/boutique">Estufas de leña</Link>
+              <Link href="/shop">Kaminöfen</Link>
             </li>
           </ul>
         </div>
 
-        {/* Columna 3: información */}
+        {/* Spalte 3: Informationen */}
         <div className="footer-col">
-          <h4 className="footer-heading">INFORMACIÓN</h4>
+          <h4 className="footer-heading">INFORMATIONEN</h4>
           <ul className="footer-links-list">
             <li>
-              <Link href="/livraison-et-retours">Envíos y devoluciones</Link>
+              <Link href="/versand-und-ruecksendung">Versand und Rücksendung</Link>
             </li>
             <li>
-              <Link href="/contact">Consultas sobre pagos</Link>
+              <Link href="/kontakt">Zahlungsinformationen</Link>
             </li>
             <li>
-              <Link href="/termes-et-conditions">
-                Condiciones generales de venta
+              <Link href="/agb">
+                Allgemeine Geschäftsbedingungen
               </Link>
             </li>
             <li>
-              <Link href="/politique-de-confidentialite">
-                Política de privacidad
+              <Link href="/datenschutz">
+                Datenschutzbestimmungen
               </Link>
             </li>
             <li>
-              <Link href="/mentions-legales">Aviso legal</Link>
+              <Link href="/impressum">Impressum</Link>
             </li>
           </ul>
         </div>
 
-        {/* Columna 4: asistencia */}
+        {/* Spalte 4: Hilfe */}
         <div className="footer-col">
-          <h4 className="footer-heading">ASISTENCIA</h4>
+          <h4 className="footer-heading">HILFE</h4>
           <ul className="footer-links-list">
             <li>
-              <Link href="/contact">Preguntas frecuentes</Link>
+              <Link href="/kontakt">Häufig gestellte Fragen</Link>
             </li>
             <li>
-              <Link href="/contact">Contacto</Link>
+              <Link href="/kontakt">Kontakt</Link>
             </li>
           </ul>
         </div>
 
-        {/* Columna 5: contacto */}
+        {/* Spalte 5: Kontakt */}
         <div className="footer-col contact-col"> 
-          <h4 className="footer-heading">CONTACTO</h4>
+          <h4 className="footer-heading">KONTAKT</h4>
           <ul className="contact-info-list">
             <li>
               <i className="fa-solid fa-location-dot"></i>
-              <span> Avenida de la Constitución, 344 08860 CASTELLDEFELS ESPAGNE</span>
+              <span> Hauptstraße 45, 10117 Berlin, DEUTSCHLAND</span>
             </li>
             <li>
               <i className="fa-solid fa-phone"></i>
-              <a href="tel:+34727745478">+34 727 74 54 78</a>
+              <a href="tel:+493012345678">+49 30 123 456 78</a>
             </li>
             <li>
               <i className="fa-solid fa-envelope"></i>
-              <a href="mailto:info@woodenza.es">info@woodenza.es</a>
+              <a href="mailto:info@holzvanta.de">info@holzvanta.de</a>
             </li>
           </ul>
         </div>
       </div>
 
-      {/* Pie de página: derechos y medios de pago */}
+      {/* Fußzeile unten: Copyright und Zahlungsmethoden */}
       <div className="footer-bottom-bar">
         <div className="footer-bottom-container">
           <p className="copyright-text">
-            © 2026 Woodenza. Todos los derechos reservados.
+            © 2026 Holzvanta. Alle Rechte vorbehalten.
           </p>
           <div className="payment-icons">
             <span className="payment-card">VISA</span>

@@ -2,59 +2,67 @@ export default function DeliveryReturnsPage() {
   return (
     <article className="legal-page">
       <div className="legal-container">
-        <span className="section-subtitle">Información para tu compra</span>
-        <h1 className="legal-title">Entrega, recepción y devoluciones</h1>
+        <span className="section-subtitle">Informationen zu Ihrem Einkauf</span>
+        <h1 className="legal-title">Lieferung, Warenannahme und Rücksendungen</h1>
         <p className="legal-intro">
-          Aquí encontrarás cómo preparamos los pedidos, qué revisar al
-          recibirlos y cómo solicitar una devolución.
+          Hier erfahren Sie, wie wir Ihre Bestellung vorbereiten, was Sie bei der
+          Annahme prüfen müssen und wie Sie eine Rücksendung beantragen.
         </p>
 
         <section className="legal-section">
-          <h2>1. Preparación del pedido y cobertura</h2>
+          <h2>1. Bestellvorbereitung und Liefergebiet</h2>
           <p>
-            Empezamos a preparar tu pedido cuando el pago queda confirmado. La
-            entrega se coordina en la dirección que indicaste, siempre que
-            podamos atender esa zona. Si necesitamos completar algún dato, nos
-            pondremos en contacto contigo.
+            Wir beginnen mit der Bearbeitung Ihrer Bestellung, sobald die Zahlung
+            bestätigt wurde. Die Lieferung wird an die von Ihnen angegebene
+            Adresse in Deutschland koordiniert, sofern wir dieses Gebiet beliefern
+            können. Sollten wir zusätzliche Angaben benötigen, setzen wir uns
+            mit Ihnen in Verbindung.
           </p>
         </section>
+        
         <section className="legal-section">
-          <h2>2. Comprobación de la entrega</h2>
+          <h2>2. Überprüfung bei der Lieferung</h2>
           <p>
-            Al recibir el pedido, revisa el estado y la cantidad de los
-            productos. Comunica cualquier problema al transportista y a
-            Woodenza cuanto antes; puedes adjuntar fotografías para documentar
-            la incidencia.
+            Überprüfen Sie bei Erhalt der Bestellung den Zustand und die Menge der
+            Produkte. Melden Sie etwaige Probleme umgehend dem Spediteur und
+            Holzvanta; Sie können gerne Fotos beifügen, um den Vorfall zu
+            dokumentieren.
           </p>
         </section>
+
         <section className="legal-section">
-          <h2>3. Solicitudes de devolución y desistimiento</h2>
+          <h2>3. Rücksendeanträge und Widerrufsrecht</h2>
           <p>
-            Cuando tengas derecho de desistimiento, envíanos un mensaje a
-            info@bonboisfr.fr dentro del plazo legal e incluye el número de
-            pedido. Devuelve los productos en su estado original, excepto
-            cuando su naturaleza o un uso adecuado no lo permita.
+            Wenn Ihnen ein Widerrufsrecht zusteht, senden Sie uns innerhalb der
+            gesetzlichen Frist eine Nachricht an info@holzvanta.de und geben Sie
+            dabei Ihre Bestellnummer an. Bitte senden Sie die Produkte in ihrem
+            Originalzustand zurück, es sei denn, ihre Beschaffenheit oder eine
+            sachgemäße Verwendung lässt dies nicht zu.
           </p>
         </section>
+
         <section className="legal-section">
-          <h2>4. Artículos que pueden quedar excluidos</h2>
+          <h2>4. Vom Widerruf ausgeschlossene Artikel</h2>
           <p>
-            La normativa puede excluir del desistimiento los productos
-            personalizados, abiertos o consumidos, así como aquellos que se
-            deterioren con rapidez. Te indicaremos qué procedimiento
-            corresponde a tu compra.
+            Die gesetzlichen Bestimmungen können personalisierte, geöffnete oder
+            bereits verwendete Produkte sowie Waren, die schnell verderben, vom
+            Widerrufsrecht ausschließen. Wir teilen Ihnen mit, welches Verfahren
+            für Ihren Kauf gilt.
           </p>
         </section>
+
         <section className="legal-section">
-          <h2>5. Reembolso del importe</h2>
+          <h2>5. Erstattung des Betrags</h2>
           <p>
-            Si aprobamos el reembolso, lo enviaremos por el mismo medio de pago,
-            a menos que acordemos otra opción. En los casos permitidos por la
-            ley, el coste de devolver los productos corresponde al cliente.
+            Wenn wir die Rückerstattung genehmigen, erfolgt diese über dasselbe
+            Zahlungsmittel, es sei denn, es wurde ausdrücklich etwas anderes
+            vereinbart. In den gesetzlich zulässigen Fällen trägt der Kunde die
+            Kosten für die Rücksendung der Produkte.
           </p>
         </section>
+
         <p className="legal-updated">
-          Última actualización: 17 de septiembre de 2026
+          Letzte Aktualisierung: 17. September 2026
         </p>
       </div>
     </article>

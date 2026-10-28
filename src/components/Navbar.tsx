@@ -15,11 +15,11 @@ export default function Navbar() {
   const isActive = (path: string) => pathname === path;
 
   const navLinks = [
-    { name: "Página principal", path: "/" },
-    { name: "Conoce Woodenza", path: "/a-propos" },
-    { name: "Catálogo", path: "/boutique" },
-    { name: "Productos", path: "/boutique" },
-    { name: "Ayuda y contacto", path: "/contact" },
+    { name: "Startseite", path: "/" },
+    { name: "Über Holzvanta", path: "/about" },
+    { name: "Katalog", path: "/shop" },
+    { name: "Produkte", path: "/shop" },
+    { name: "Hilfe & Kontakt", path: "/contact" },
   ];
 
   return (
@@ -29,14 +29,14 @@ export default function Navbar() {
         <Link href="/" className="navbar-logo">
           <Image
             src="/img/woodenza.svg"
-            alt="Woodenza"
+            alt="Holzvanta"
             width={100}
             height={45}
             priority
           />
         </Link>
 
-        {/* Navegación de escritorio */}
+        {/* Desktop-Navigation */}
         <nav className="desktop-nav">
           {navLinks.map((link) => (
             <Link
@@ -49,28 +49,28 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* Acciones */}
+        {/* Aktionen */}
         <div className="navbar-actions">
-          {/* Búsqueda */}
-          <button className="icon-btn search-btn" aria-label="Buscar productos">
+          {/* Suche */}
+          <button className="icon-btn search-btn" aria-label="Produkte suchen">
             <i className="fa-solid fa-magnifying-glass"></i>
           </button>
 
-          {/* Carrito con contador */}
+          {/* Warenkorb mit Zähler */}
           <Link
-            href="/panier"
+            href="/cart"
             className="icon-btn cart-btn"
-            aria-label="Ver la cesta"
+            aria-label="Warenkorb ansehen"
           >
             <i className="fa-solid fa-cart-shopping"></i>
             {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
           </Link>
 
-          {/* Menú móvil */}
+          {/* Mobiles Menü */}
           <button
             className="menu-burger-btn"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Abrir el menú de navegación"
+            aria-label="Navigationsmenü öffnen"
           >
             <i
               className={isMenuOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars"}
@@ -79,20 +79,20 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Menú móvil */}
+      {/* Mobiles Menü Overlay */}
       {isMenuOpen && (
         <div className="mobile-menu-overlay">
           <div className="mobile-menu">
             <div className="mobile-menu-header">
               <Image
                 src="/img/woodenza.svg"
-                alt="Woodenza"
+                alt="Holzvanta"
                 width={100}
                 height={35}
               />
               <div className="mobile-menu-actions">
                 <Link
-                  href="/panier"
+                  href="/cart"
                   className="icon-btn cart-btn"
                   onClick={() => setIsMenuOpen(false)}
                 >

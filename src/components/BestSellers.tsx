@@ -13,22 +13,22 @@ export default function BestSellers() {
   return (
     <section className="bestsellers-section">
       <div className="bestsellers-container">
-        {/* Encabezado */}
+        {/* Überschrift */}
         <div className="bestsellers-header">
-          <h2 className="bestsellers-title">Los productos favoritos de nuestros clientes</h2>
+          <h2 className="bestsellers-title">Die Favoriten unserer Kunden</h2>
           <p className="bestsellers-subtitle">
-            Una selección de combustibles y artículos de calefacción preparados para tu próximo pedido.
+            Eine Auswahl an Brennstoffen und Heizartikeln, bereit für Ihre nächste Bestellung.
           </p>
           <div className="bestsellers-line"></div>
         </div>
 
-        {/* Grille de produits */}
+        {/* Produktgitter */}
         <div className="products-grid">
           {products.map((product) => (
             <div key={product.id} className="product-card">
-              {/* Imagen y etiqueta de descuento */}
+              {/* Bild und Rabatt-Badge */}
               <Link
-                href={`/boutique/${product.id}`}
+                href={`/shop/${product.id}`}
                 className="product-image-link"
               >
                 <div className="product-image-wrap">
@@ -44,16 +44,16 @@ export default function BestSellers() {
                 </div>
               </Link>
 
-              {/* Detalles del producto */}
+              {/* Produktdetails */}
               <div className="product-info">
                 <Link
-                  href={`/boutique/${product.id}`}
+                  href={`/shop/${product.id}`}
                   className="product-detail-link"
                 >
                   <span className="product-category">{product.category}</span>
                   <h3 className="product-title">{product.title}</h3>
 
-                  {/* Valoraciones */}
+                  {/* Bewertungen */}
                   <div className="product-rating">
                     <div className="stars">
                       {[...Array(5)].map((_, i) => (
@@ -71,7 +71,7 @@ export default function BestSellers() {
                   </div>
                 </Link>
 
-                {/* Precio */}
+                {/* Preis */}
                 <div className="product-price-box">
                   {product.oldPrice && (
                     <span className="old-price">
@@ -83,7 +83,7 @@ export default function BestSellers() {
                   </span>
                 </div>
 
-                {/* Botón para añadir al carrito */}
+                {/* In den Warenkorb Button */}
                 <button
                   className="btn-add-cart"
                   onClick={() =>
@@ -94,25 +94,24 @@ export default function BestSellers() {
                       price: product.price,
                       oldPrice: product.oldPrice,
                       image: product.image,
-                      // quantity: 1,
                     })
                   }
                 >
                   <i className="fa-solid fa-cart-shopping"></i>
-                  Añadir a la cesta
+                  In den Warenkorb
                 </button>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Botón para ver todos los productos */}
+        {/* Alle Produkte ansehen Button */}
         <div
           className="bestsellers-footer"
           style={{ textAlign: "center", marginTop: "40px" }}
         >
-          <Link href="/boutique" className="btn-view-all">
-            Explorar el catálogo <i className="fa-solid fa-arrow-right"></i>
+          <Link href="/shop" className="btn-view-all">
+            Katalog durchstöbern <i className="fa-solid fa-arrow-right"></i>
           </Link>
         </div>
       </div>

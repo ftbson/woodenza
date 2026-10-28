@@ -9,40 +9,40 @@ import { useCart } from "@/context/CartContext";
 export default function ShopGrid() {
   const { addToCart } = useCart();
 
-  // Paginación y opciones de visualización
+  // Paginierung und Anzeigeoptionen
   const [itemsPerPage, setItemsPerPage] = useState<number>(12);
   const [sortOption, setSortOption] = useState<string>("standard");
 
-  // Filtros
+  // Filter
   const [showFilterPanel, setShowFilterPanel] = useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [maxPrice, setMaxPrice] = useState<number>(2000);
   const [minRating, setMinRating] = useState<number>(0);
 
-  // Obtener las categorías disponibles
+  // Verfügbare Kategorien abrufen
   const categories = useMemo(() => {
     const cats = new Set(productsData.map((p) => p.category));
     return ["all", ...Array.from(cats)];
   }, []);
 
-  // Application des filtres et du tri
+  // Filter und Sortierung anwenden
   const filteredProducts = useMemo(() => {
     let result = [...productsData];
 
-    // 1. Filtrar por categoría
+    // 1. Nach Kategorie filtern
     if (selectedCategory !== "all") {
       result = result.filter((p) => p.category === selectedCategory);
     }
 
-    // 2. Filtrar por precio máximo
+    // 2. Nach Maximalpreis filtern
     result = result.filter((p) => p.price <= maxPrice);
 
-    // 3. Filtrar por valoración mínima
+    // 3. Nach Mindestbewertung filtern
     if (minRating > 0) {
       result = result.filter((p) => (p.rating || 0) >= minRating);
     }
 
-    // 4. Ordenar los productos
+    // 4. Produkte sortieren
     if (sortOption === "price-asc") {
       result.sort((a, b) => a.price - b.price);
     } else if (sortOption === "price-desc") {
@@ -54,10 +54,10 @@ export default function ShopGrid() {
     return result;
   }, [selectedCategory, maxPrice, minRating, sortOption]);
 
-  // Productos de la página actual
+  // Produkte der aktuellen Seite
   const displayedProducts = filteredProducts.slice(0, itemsPerPage);
 
-  // Restablecer los filtros
+  // Filter zurücksetzen
   const resetFilters = () => {
     setSelectedCategory("all");
     setMaxPrice(2000);
@@ -68,17 +68,17 @@ export default function ShopGrid() {
   return (
     <section className="shop-section">
       <div className="shop-container">
-        {/* BARRE D'OUTILS ET FILTRES */}
+        {/* WERKZEUGLEISTE UND FILTER */}
         <div className="shop-toolbar">
           <div className="shop-breadcrumb">
-            <Link href="/">Inicio</Link>
+            <Link href="/">Startseite</Link>
             <span className="separator">/</span>
-            <span className="current">Tienda</span>
+            <span className="current">Shop</span>
           </div>
 
           <div className="shop-controls">
             <div className="items-per-page">
-              <span>Productos por página:</span>
+              <span>Produkte pro Seite:</span>
               {[24, 36, 45, 55].map((num) => (
                 <button
                   key={num}
@@ -96,10 +96,10 @@ export default function ShopGrid() {
                 onChange={(e) => setSortOption(e.target.value)}
                 className="sort-select"
               >
-                <option value="standard">Orden recomendado</option>
-                <option value="price-asc">Precio: de menor a mayor</option>
-                <option value="price-desc">Precio: de mayor a menor</option>
-                <option value="rating-desc">Valoración más alta</option>
+                <option value="standard">Empfohlene Reihenfolge</option>
+                <option value="price-asc">Preis: aufsteigend</option>
+                <option value="price-desc">Preis: absteigend</option>
+                <option value="rating-desc">Höchste Bewertung</option>
               </select>
             </div>
 
@@ -108,22 +108,22 @@ export default function ShopGrid() {
               onClick={() => setShowFilterPanel(!showFilterPanel)}
             >
               <i className="fa-solid fa-sliders"></i>
-              <span>Filtrar productos</span>
+              <span>Produkte filtern</span>
             </button>
           </div>
         </div>
 
-        {/* PANNEAU DE FILTRES */}
+        {/* FILTERPANEL */}
         {showFilterPanel && (
           <div className="filter-panel">
             <div className="filter-group">
-              <label className="filter-label">Categoría:</label>
+              <label className="filter-label">Kategorie:</label>
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
                 className="filter-select"
               >
-                <option value="all">Ver todas las categorías</option>
+                <option value="all">Alle Kategorien anzeigen</option>
                 {categories
                   .filter((cat) => cat !== "all")
                   .map((cat) => (
@@ -136,7 +136,7 @@ export default function ShopGrid() {
 
             <div className="filter-group">
               <label className="filter-label">
-                Precio máx.: <strong>{maxPrice.toFixed(2)} €</strong>
+                Max. Preis: <strong>{maxPrice.toFixed(2)} €</strong>
               </label>
               <input
                 type="range"
@@ -150,41 +150,41 @@ export default function ShopGrid() {
             </div>
 
             <div className="filter-group">
-              <label className="filter-label">Valoración mínima:</label>
+              <label className="filter-label">Mindestbewertung:</label>
               <select
                 value={minRating}
                 onChange={(e) => setMinRating(Number(e.target.value))}
                 className="filter-select"
               >
-                <option value={0}>Cualquier valoración</option>
-                <option value={4}>4 estrellas o más</option>
-                <option value={4.5}>4,5 estrellas o más</option>
-                <option value={5}>5 estrellas</option>
+                <option value={0}>Jede Bewertung</option>
+                <option value={4}>4 Sterne oder mehr</option>
+                <option value={4.5}>4,5 Sterne oder mehr</option>
+                <option value={5}>5 Sterne</option>
               </select>
             </div>
 
             <button className="btn-reset-filters" onClick={resetFilters}>
-              Borrar filtros
+              Filter zurücksetzen
             </button>
           </div>
         )}
 
-        {/* RESULTADOS */}
+        {/* ERGEBNISSE */}
         <div className="results-count">
-          En esta página: <strong>{displayedProducts.length}</strong> de{" "}
+          Auf dieser Seite: <strong>{displayedProducts.length}</strong> von{" "}
           <strong>{filteredProducts.length}</strong>{" "}
-          {filteredProducts.length === 1 ? "producto" : "productos"}
+          {filteredProducts.length === 1 ? "Produkt" : "Produkten"}
         </div>
 
-        {/* GRILLE DE PRODUITS */}
+        {/* PRODUKTGITTER */}
         <div className="products-grid">
           {displayedProducts.map((product: Product) => (
             <div key={product.id} className="product-card">
-              {/* Imagen y etiqueta de promoción */}
+              {/* Bild und Rabatt-Badge */}
               <Link
-                href={`/boutique/${product.id}`}
+                href={`/shop/${product.id}`}
                 className="product-image-link"
-                aria-label={`Ver ${product.title}`}
+                aria-label={`${product.title} ansehen`}
               >
                 <div className="product-image-wrap">
                   <Image
@@ -199,16 +199,16 @@ export default function ShopGrid() {
                 </div>
               </Link>
 
-              {/* Detalles del producto */}
+              {/* Produktdetails */}
               <div className="product-info">
                 <Link
-                  href={`/boutique/${product.id}`}
+                  href={`/shop/${product.id}`}
                   className="product-detail-link"
                 >
                   <span className="product-category">{product.category}</span>
                   <h3 className="product-title">{product.title}</h3>
 
-                  {/* Valoraciones */}
+                  {/* Bewertungen */}
                   <div className="product-rating">
                     <div className="stars">
                       {[...Array(5)].map((_, i) => (
@@ -227,7 +227,7 @@ export default function ShopGrid() {
                     )}
                   </div>
 
-                  {/* Precio */}
+                  {/* Preis */}
                   <div className="product-price-box">
                     {product.oldPrice && (
                       <span className="old-price">
@@ -240,7 +240,7 @@ export default function ShopGrid() {
                   </div>
                 </Link>
 
-                {/* Botón para añadir al carrito */}
+                {/* In den Warenkorb Button */}
                 <button
                   className="btn-add-cart"
                   onClick={() =>
@@ -251,12 +251,11 @@ export default function ShopGrid() {
                       price: product.price,
                       oldPrice: product.oldPrice,
                       image: product.image,
-                      // quantity: 1,
                     })
                   }
                 >
                   <i className="fa-solid fa-cart-shopping"></i>
-                  Añadir a la cesta
+                  In den Warenkorb
                 </button>
               </div>
             </div>
@@ -265,9 +264,9 @@ export default function ShopGrid() {
 
         {displayedProducts.length === 0 && (
           <div className="no-products-found">
-            <p>No encontramos productos que coincidan con los filtros seleccionados.</p>
+            <p>Es wurden keine Produkte gefunden, die den ausgewählten Filtern entsprechen.</p>
             <button className="btn-reset-filters" onClick={resetFilters}>
-              Borrar filtros
+              Filter zurücksetzen
             </button>
           </div>
         )}

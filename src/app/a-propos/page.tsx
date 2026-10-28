@@ -3,77 +3,79 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Quiénes somos | Woodenza, calefacción de leña en Espana",
+  title: "Über uns | Holzvanta, Kaminholz und Heizung in Deutschland",
   description:
-    "Conoce Woodenza: una selección de leña, pellets, briquetas y estufas para calentar tu hogar con asesoramiento y entrega en Espana.",
+    "Lernen Sie Holzvanta kennen: eine Auswahl an Brennholz, Pellets, Briketts und Öfen, um Ihr Zuhause mit Beratung und Lieferung in Deutschland zu heizen.",
 };
 
 export default function AboutPage() {
   return (
     <div className="about-page">
-      {/* SECCIÓN 1: MISIÓN Y ÁREAS */}
+      {/* SEKTION 1: MISSION UND BEREICHE */}
       <section className="about-intro-section">
         <div className="about-container">
           <div className="about-grid-3">
-            {/* Área 1: nuestra misión */}
+            {/* Bereich 1: Unsere Mission */}
             <div className="about-col">
-              <span className="about-subtitle-tag">Conoce Woodenza</span>
-              <h1 className="about-col-title">Calor de hogar, con una elección consciente</h1>
+              <span className="about-subtitle-tag">Holzvanta kennenlernen</span>
+              <h1 className="about-col-title">
+                Wohlfühlatmosphäre durch bewusste Holzauswahl
+              </h1>
               <p className="about-text">
-                En Woodenza queremos que calentar tu casa con leña sea una
-                opción práctica, asequible y más respetuosa con el entorno.
-                Elegimos combustibles de calidad procedentes de fuentes
-                responsables para ofrecer un rendimiento fiable y un calor
-                agradable en el día a día.
+                Bei Holzvanta möchten wir, dass das Heizen Ihres Hauses mit Holz
+                eine praktische, erschwingliche und umweltfreundlichere Option
+                wird. Wir wählen Qualitätsbrennstoffe aus verantwortungsvollen
+                Quellen aus, um eine zuverlässige Leistung und eine angenehme
+                Wärme im Alltag zu bieten.
               </p>
             </div>
 
-            {/* Área 2: experiencia */}
+            {/* Bereich 2: Erfahrung */}
             <div className="about-col flex-between">
               <div>
                 <h3 className="about-col-h3">
-                  Experiencia en calefacción para que elijas con tranquilidad.
+                  Erfahrung in der Heizungstechnik, damit Sie beruhigt wählen können.
                 </h3>
                 <p className="about-text">
-                  Llevamos años distribuyendo leña y ayudamos a hogares y
-                  empresas a encontrar soluciones adecuadas para sus
-                  necesidades de calefacción.
+                  Wir vertreiben seit Jahren Brennholz und helfen Haushalten und
+                  Unternehmen dabei, die passenden Lösungen für ihren
+                  Heizbedarf zu finden.
                 </p>
               </div>
               <Link href="/boutique" className="about-link-btn">
-                DESCUBRIR EL CATÁLOGO
+                KATALOG ENTDECKEN
               </Link>
             </div>
 
-            {/* Área 3: selección de productos */}
+            {/* Bereich 3: Produktauswahl */}
             <div className="about-col flex-between">
               <div>
                 <h3 className="about-col-h3">
-                  Productos elegidos por su calidad y rendimiento
+                  Produkte ausgewählt nach Qualität und Leistung
                 </h3>
                 <p className="about-text">
-                  En el catálogo encontrarás leña, briquetas de haya, pellets,
-                  leña prensada y estufas de leña, seleccionados para ofrecer
-                  un uso fiable y un buen rendimiento.
+                  Im Katalog finden Sie Brennholz, Buchenbriketts, Pellets,
+                  Pressholz und Kaminöfen, die für eine zuverlässige Anwendung
+                  und gute Leistung ausgewählt wurden.
                 </p>
               </div>
               <Link href="/boutique" className="about-link-btn">
-                EXPLORAR LOS PRODUCTOS
+                PRODUKTE ERKUNDEN
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SECCIÓN 2: CON WOODENZA, ELIGES */}
+      {/* SEKTION 2: MIT HOLZVANTA WÄHLEN SIE */}
       <section className="about-feature-section">
         <div className="about-container">
           <div className="about-feature-grid">
-            {/* Imagen del almacén */}
+            {/* Bild des Lagers */}
             <div className="about-image-wrapper">
               <Image
                 src="/img/about.jpeg"
-                alt="Espacio de almacenamiento de leña de Woodenza"
+                alt="Holzvanta Brennholzlager"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="about-img"
@@ -81,35 +83,35 @@ export default function AboutPage() {
               />
             </div>
 
-            {/* Contenu texte */}
+            {/* Textinhalt */}
             <div className="about-feature-content">
               <span className="about-subtitle-tag">
-                Tu tienda de leña y calefacción
+                Ihr Shop für Brennholz und Heizung
               </span>
               <h2 className="about-main-title">
-                Lo que encuentras en Woodenza
+                Was Sie bei Holzvanta finden
               </h2>
 
               <p className="about-highlight-text">
-                Combustibles seleccionados, rendimiento fiable y atención
-                personalizada para que encuentres una solución adaptada a tu
-                hogar.
+                Ausgewählte Brennstoffe, zuverlässige Leistung und persönliche
+                Betreuung, damit Sie eine auf Ihr Zuhause abgestimmte Lösung
+                finden.
               </p>
 
               <p className="about-text">
-                La calidad guía nuestra selección. Trabajamos con socios que
-                apoyan una gestión forestal responsable y ofrecemos
-                combustibles con alto poder calorífico, poca humedad residual
-                y características constantes.
+                Qualität leitet unsere Auswahl. Wir arbeiten mit Partnern zusammen,
+                die eine verantwortungsvolle Forstwirtschaft unterstützen, und
+                bieten Brennstoffe mit hohem Heizwert, geringer Restfeuchte und
+                konstanten Eigenschaften an.
               </p>
 
               <p className="about-text">
-                Buscamos productos que proporcionen una combustión eficiente y
-                un calor constante. Seleccionamos cada referencia pensando en
-                las necesidades de calefacción durante todo el año.
+                Wir suchen nach Produkten, die eine effiziente Verbrennung und eine
+                gleichmäßige Wärme gewährleisten. Jedes Referenzprodukt wird mit
+                Blick auf den ganzjährigen Heizbedarf ausgewählt.
               </p>
 
-              {/* Redes sociales */}
+              {/* Soziale Netzwerke / Divider */}
               <div className="about-social-divider">
                 <div className="about-social-links"></div>
               </div>

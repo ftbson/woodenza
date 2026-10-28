@@ -27,9 +27,9 @@ export default function ProductDetails({ product }: { product: Product }) {
     <main className="product-page">
       <div className="product-page-container">
         <div className="product-page-breadcrumb">
-          <Link href="/">Inicio</Link>
+          <Link href="/">Startseite</Link>
           <span>/</span>
-          <Link href="/boutique">Tienda</Link>
+          <Link href="/shop">Shop</Link>
           <span>/</span>
           <span>{product.title}</span>
         </div>
@@ -62,7 +62,7 @@ export default function ProductDetails({ product }: { product: Product }) {
               </div>
               {product.reviewsCount !== undefined && (
                 <span className="reviews-count">
-                  ({product.reviewsCount} opiniones)
+                  ({product.reviewsCount} Bewertungen)
                 </span>
               )}
             </div>
@@ -70,21 +70,21 @@ export default function ProductDetails({ product }: { product: Product }) {
             <div className="product-detail-price">
               {product.oldPrice && (
                 <span className="old-price">
-                  {product.oldPrice.toFixed(2)} €
+                  {product.oldPrice.toFixed(2).replace(".", ",")} €
                 </span>
               )}
-              <strong>{product.price.toFixed(2)} €</strong>
+              <strong>{product.price.toFixed(2).replace(".", ",")} €</strong>
             </div>
             <p className="product-detail-description">
               {product.description}
             </p>
 
             <div className="product-purchase-row">
-              <div className="quantity-control" aria-label="Cantidad">
+              <div className="quantity-control" aria-label="Menge">
                 <button
                   type="button"
                   onClick={() => setQuantity((value) => Math.max(1, value - 1))}
-                  aria-label="Reducir la cantidad"
+                  aria-label="Menge verringern"
                 >
                   −
                 </button>
@@ -92,7 +92,7 @@ export default function ProductDetails({ product }: { product: Product }) {
                 <button
                   type="button"
                   onClick={() => setQuantity((value) => value + 1)}
-                  aria-label="Aumentar la cantidad"
+                  aria-label="Menge erhöhen"
                 >
                   +
                 </button>
@@ -103,11 +103,11 @@ export default function ProductDetails({ product }: { product: Product }) {
                 onClick={addProductToCart}
               >
                 <i className="fa-solid fa-cart-shopping"></i>
-                Añadir a la cesta
+                In den Warenkorb
               </button>
             </div>
-            <Link href="/panier" className="product-cart-link">
-              Ir a la cesta
+            <Link href="/cart" className="product-cart-link">
+              Zum Warenkorb
             </Link>
           </div>
         </div>

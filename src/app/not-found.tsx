@@ -2,22 +2,22 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "No encontramos esta página | Woodenza",
+  title: "Seite nicht gefunden | Holzvanta",
   description:
-    "La página que buscas no está disponible. Vuelve al inicio de Woodenza o explora el catálogo de leña, pellets y estufas.",
+    "Die gesuchte Seite ist nicht verfügbar. Kehren Sie zur Startseite von Holzvanta zurück oder entdecken Sie unser Angebot an Brennholz, Pellets und Kaminöfen.",
 };
 
 export default function NotFound() {
   return (
     <main className="legal-page">
       <div className="legal-container">
-        <span className="section-subtitle">Woodenza</span>
-        <h1 className="legal-title">No encontramos esa página</h1>
+        <span className="section-subtitle">Holzvanta</span>
+        <h1 className="legal-title">Seite nicht gefunden</h1>
         <p className="legal-intro">
-          Puede que la dirección haya cambiado o que el contenido ya no esté disponible.
+          Möglicherweise hat sich die Adresse geändert oder der Inhalt ist nicht mehr verfügbar.
         </p>
         <Link href="/" className="about-link-btn">
-          Regresar a la página principal
+          Zurück zur Startseite
         </Link>
       </div>
     </main>

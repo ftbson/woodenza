@@ -15,10 +15,10 @@ export const productsData: Product[] = [
   {
     id: "prod-1",
     discount: "-24 %",
-    category: "Fresno – Leña",
-    title: "Palé de troncos de fresno de 25 cm, secados en horno",
+    category: "Esche – Kaminholz",
+    title: "Palette Esche Kaminholz 25 cm Scheite, kammgetrocknet",
     description:
-      "Palé de leña de fresno en troncos de 25 cm, secados en horno. Un formato práctico para almacenar combustible para la estufa o la chimenea.",
+      "Palette Esche Kaminholz in 25 cm Scheiten, OFEN- / kammgetrocknet. Ein praktisches Format zur Aufbewahrung von Brennstoff für Ihren Kamin oder Ofen.",
     rating: 5,
     reviewsCount: 214,
     oldPrice: 439.0,
@@ -28,10 +28,10 @@ export const productsData: Product[] = [
   {
     id: "prod-2",
     discount: "-21 %",
-    category: "Roble – Leña",
-    title: "Palé de leña de roble en troncos de 25 cm, secados en horno",
+    category: "Eiche – Kaminholz",
+    title: "Palette Eiche Kaminholz 25 cm Scheite, kammgetrocknet",
     description:
-      "Reserva de roble cortado en piezas de 25 cm y secado en horno. El palé permite tener la leña agrupada y lista para guardar.",
+      "Eichenholz-Vorrat in 25 cm Scheite geschnitten und kammgetrocknet. Die Palette ermöglicht eine saubere Lagerung und sofortige Einsatzbereitschaft.",
     rating: 5,
     reviewsCount: 431,
     oldPrice: 429.0,
@@ -40,10 +40,10 @@ export const productsData: Product[] = [
   },
   {
     id: "prod-3",
-    category: "Fresno – Leña",
-    title: "Medio palé de leña cortada de abedul y fresno",
+    category: "Esche – Kaminholz",
+    title: "Halbe Palette Kaminholz-Mix Birke & Esche",
     description:
-      "Formato de medio palé con leña cortada, compuesto por una mezcla de abedul y fresno para completar tu provisión de combustible.",
+      "Halbpaletten-Format mit geschnittenem Kaminholz, bestehend aus einer Mischung aus Birke und Esche zur Ergänzung Ihres Brennstoffvorrats.",
     rating: 4.5,
     reviewsCount: 279,
     price: 195.3,
@@ -52,10 +52,10 @@ export const productsData: Product[] = [
   {
     id: "prod-4",
     discount: "-22 %",
-    category: "Carpe – Leña",
-    title: "Palé de carpe cortado en troncos de 25 cm y secado en horno",
+    category: "Hainbuche – Kaminholz",
+    title: "Palette Hainbuche Kaminholz 25 cm Scheite, kammgetrocknet",
     description:
-      "Leña de carpe cortada a 25 cm y secada en horno, reunida en un palé para que puedas organizar su almacenamiento.",
+      "Hainbuchen-Kaminholz, auf 25 cm zugeschnitten und kammgetrocknet, übersichtlich auf einer Palette verpackt.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 449.0,
@@ -65,10 +65,10 @@ export const productsData: Product[] = [
   {
     id: "prod-5",
     discount: "-30 %",
-    category: "Leña",
-    title: "50 iniciadores de fuego de lana de madera 100 % natural",
+    category: "Kaminholz",
+    title: "50 Öko-Anzünder aus 100 % natürlicher Holzwolle",
     description:
-      "Paquete de 50 iniciadores de fuego fabricados con lana de madera 100 % natural, un complemento práctico para encender la leña.",
+      "Packung mit 50 Anzündern aus 100 % natürlicher Holzwolle, eine praktische Hilfe zum schnellen Entfachen von Holzfeuern.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 8.0,
@@ -78,10 +78,10 @@ export const productsData: Product[] = [
   {
     id: "prod-6",
     discount: "-30 %",
-    category: "Leña",
-    title: "Lote de 120 kg de haya seca con astillas para encender",
+    category: "Kaminholz",
+    title: "120 kg Set trockenes Buchenholz mit Anzündholz",
     description:
-      "Lote de 120 kg que incluye leña seca de haya, astillas para el encendido y madera dura, según la composición indicada para este producto.",
+      "120 kg Paket inklusive trockenem Buchenbrennholz, Anzündholz und Hartholz, zusammengestellt für eine effiziente Verbrennung.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 84.0,
@@ -91,10 +91,10 @@ export const productsData: Product[] = [
   {
     id: "prod-7",
     discount: "-30 %",
-    category: "Abedul – Leña",
-    title: "88 sacos de troncos de abedul de 25 cm, secados en horno",
+    category: "Birke – Kaminholz",
+    title: "88 Säcke Birkenholz 25 cm Scheite, kammgetrocknet",
     description:
-      "Suministro de 88 sacos de leña de abedul cortada a 25 cm y secada en horno, listo para almacenar y utilizar.",
+      "Lieferung von 88 Säcken Birkenholz, auf 25 cm geschnitten und kammgetrocknet, sofort einsatzbereit und leicht zu lagern.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 409.0,
@@ -104,10 +104,10 @@ export const productsData: Product[] = [
   {
     id: "prod-8",
     discount: "-30 %",
-    category: "Pellets",
-    title: "Pellets Bioénergie: palé de 66 sacos de 15 kg",
+    category: "Holzpellets",
+    title: "Bioénergie Pellets: Palette mit 66 Säcken à 15 kg",
     description:
-      "Palé de pellets Bioénergie compuesto por 66 sacos de 15 kg, pensado para disponer de una reserva de combustible en casa.",
+      "Palette Bioénergie Holzpellets bestehend aus 66 Säcken à 15 kg, ideal zum Anlegen eines Heizvorrats für Ihr Zuhause.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 380.0,
@@ -117,10 +117,10 @@ export const productsData: Product[] = [
   {
     id: "prod-9",
     discount: "-30 %",
-    category: "Leña",
-    title: "Leña extra seca de 25 cm en sacos, palé de 1,3 m³",
+    category: "Kaminholz",
+    title: "Extratrockenes Kaminholz 25 cm in Säcken, 1,3 m³ Palette",
     description:
-      "Palé de 1,3 m³ de leña extra seca, cortada a 25 cm y presentada en sacos para facilitar su organización.",
+      "1,3 m³ Palette extratrockenes Kaminholz, auf 25 cm geschnitten und in Säcken verpackt für einfaches Handling.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 301.0,
@@ -130,10 +130,10 @@ export const productsData: Product[] = [
   {
     id: "prod-10",
     discount: "-31 %",
-    category: "Leña",
-    title: "Palé de 1,7 m³ de leña en sacos, troncos de 33 cm",
+    category: "Kaminholz",
+    title: "Palette mit 1,7 m³ Kaminholz in Säcken, 33 cm Scheite",
     description:
-      "Un palé de 1,7 m³ con leña en sacos y troncos de 33 cm, una medida útil para planificar el espacio de almacenamiento.",
+      "Eine Palette mit 1,7 m³ Holz in Säcken und 33 cm Scheiten, ein praktisches Maß für die einfache Lagerungsplanung.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 310.0,
@@ -143,10 +143,10 @@ export const productsData: Product[] = [
   {
     id: "prod-11",
     discount: "-28 %",
-    category: "Leña",
-    title: "Leña de madera dura a granel, cortada a 50 cm",
+    category: "Kaminholz",
+    title: "Hartholz-Kaminholz lose, 50 cm Scheite",
     description:
-      "Leña a granel de madera dura, cortada en piezas de 50 cm para quienes buscan un formato diferente de suministro.",
+      "Loses Hartholz-Kaminholz, geschnitten in 50 cm Stücke für alle, die eine größere Holzverarbeitung bevorzugen.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 65.0,
@@ -156,10 +156,10 @@ export const productsData: Product[] = [
   {
     id: "prod-12",
     discount: "-30 %",
-    category: "Pellets",
-    title: "Pellets Butagaz en palé de 66 sacos de 15 kg",
+    category: "Holzpellets",
+    title: "Butagaz Pellets: Palette mit 66 Säcken à 15 kg",
     description:
-      "Suministro de pellets Butagaz en un palé con 66 sacos de 15 kg cada uno, para mantener organizada tu reserva.",
+      "Lieferung von Butagaz Holzpellets auf einer Palette mit 66 Säcken à 15 kg zur optimalen Bevorratung.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 400.0,
@@ -169,10 +169,10 @@ export const productsData: Product[] = [
   {
     id: "prod-13",
     discount: "-8 %",
-    category: "Briquetas de madera",
-    title: "Briquetas de haya Pollmeier Premium Plus, formato de 960 kg",
+    category: "Holzbriketts",
+    title: "Pollmeier Premium Plus Buchenbriketts, 960 kg Palette",
     description:
-      "Briquetas de madera de haya Pollmeier Premium Plus en un lote de 960 kg, una alternativa compacta a la leña tradicional.",
+      "Pollmeier Premium Plus Buchenbriketts in einer 960 kg Packung, eine kompakte Alternative zu klassischem Kaminholz.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 310.0,
@@ -182,10 +182,10 @@ export const productsData: Product[] = [
   {
     id: "prod-14",
     discount: "-30 %",
-    category: "Pellets",
-    title: "Pellets ECOBIO: palé de 66 sacos de 15 kg",
+    category: "Holzpellets",
+    title: "ECOBIO Pellets: Palette mit 66 Säcken à 15 kg",
     description:
-      "Palé de pellets ECOBIO con 66 sacos de 15 kg; un formato pensado para almacenar el combustible de forma ordenada.",
+      "ECOBIO Holzpellet-Palette mit 66 Säcken à 15 kg; ausgelegt für saubere und geordnete Lagerung.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 425.0,
@@ -195,10 +195,10 @@ export const productsData: Product[] = [
   {
     id: "prod-15",
     discount: "-26 %",
-    category: "Pellets",
-    title: "Pellets Helios en palé de 65 sacos de 15 kg",
+    category: "Holzpellets",
+    title: "Helios Pellets: Palette mit 65 Säcken à 15 kg",
     description:
-      "El palé Helios reúne 65 sacos de pellets de 15 kg, una opción práctica para organizar las reservas de calefacción.",
+      "Die Helios-Palette enthält 65 Säcke Holzpellets à 15 kg, eine praktische Option für die Heizsaison.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 360.0,
@@ -208,10 +208,10 @@ export const productsData: Product[] = [
   {
     id: "prod-16",
     discount: "-30 %",
-    category: "Briquetas de madera",
-    title: "Briquetas de madera Uckermark en palé de 960 kg",
+    category: "Holzbriketts",
+    title: "Uckermark Holzbriketts auf Palette mit 960 kg",
     description:
-      "Briquetas de madera comprimida Uckermark, presentadas en un palé de 960 kg para contar con una reserva de combustible.",
+      "Gepresste Uckermark Holzbriketts auf einer 960 kg Palette für eine verlässliche und lang anhaltende Wärme.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 329.0,
@@ -221,10 +221,10 @@ export const productsData: Product[] = [
   {
     id: "prod-17",
     discount: "-26 %",
-    category: "Pellets",
-    title: "Pellets Green Energy: palé de 65 sacos de 15 kg",
+    category: "Holzpellets",
+    title: "Green Energy Pellets: Palette mit 65 Säcken à 15 kg",
     description:
-      "Pellets Green Energy en un palé con 65 sacos de 15 kg cada uno, un formato de suministro pensado para la temporada.",
+      "Green Energy Holzpellets auf Palette mit 65 Säcken à 15 kg, perfekt vorbereitet für den gesamten Winter.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 360.0,
@@ -234,10 +234,10 @@ export const productsData: Product[] = [
   {
     id: "prod-18",
     discount: "-30 %",
-    category: "Estufas de leña",
-    title: "Estufa de leña DEVILLE TORON 50, 8 kW",
+    category: "Kaminöfen",
+    title: "Kaminofen DEVILLE TORON 50, 8 kW",
     description:
-      "Estufa de leña DEVILLE modelo TORON 50, con una potencia indicada de 8 kW para completar tu sistema de calefacción.",
+      "Kaminofen DEVILLE Modell TORON 50 mit einer Heizleistung von 8 kW zur optimalen Ergänzung Ihres Heizsystems.",
     rating: 5,
     reviewsCount: 214,
     oldPrice: 1342.0,
@@ -247,10 +247,10 @@ export const productsData: Product[] = [
   {
     id: "prod-19",
     discount: "-30 %",
-    category: "Estufas de leña",
-    title: "Estufa de leña INTERSTOVES SARA, 12 kW",
+    category: "Kaminöfen",
+    title: "Kaminofen INTERSTOVES SARA, 12 kW",
     description:
-      "Modelo SARA de INTERSTOVES: estufa de leña con una potencia nominal indicada de 12 kW.",
+      "Modell SARA von INTERSTOVES: Kaminofen mit einer Nennwärmeleistung von 12 kW.",
     rating: 5,
     reviewsCount: 431,
     oldPrice: 577.0,
@@ -260,10 +260,10 @@ export const productsData: Product[] = [
   {
     id: "prod-20",
     discount: "-30 %",
-    category: "Estufas de leña",
-    title: "Estufa de leña DEVILLE SANDY 8 kW, versión LAB",
+    category: "Kaminöfen",
+    title: "Kaminofen DEVILLE SANDY 8 kW, LAB Ausführung",
     description:
-      "Estufa de leña SANDY 8 kW de DEVILLE, versión LAB, identificada por su fabricante y potencia.",
+      "Kaminofen SANDY 8 kW von DEVILLE in LAB-Ausführung, zeichnet sich durch hohe Energieeffizienz aus.",
     rating: 4.5,
     reviewsCount: 1142,
     oldPrice: 1142.0,
@@ -273,10 +273,10 @@ export const productsData: Product[] = [
   {
     id: "prod-21",
     discount: "-30 %",
-    category: "Estufas de leña",
-    title: "Estufa de leña INTERSTOVES LYA, 12 kW",
+    category: "Kaminöfen",
+    title: "Kaminofen INTERSTOVES LYA, 12 kW",
     description:
-      "Estufa LYA de INTERSTOVES para calefacción con leña, con una potencia declarada de 12 kW.",
+      "Kaminofen LYA von INTERSTOVES für die Holzfeuerung mit einer angegebenen Leistung von 12 kW.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 489.0,
@@ -286,10 +286,10 @@ export const productsData: Product[] = [
   {
     id: "prod-22",
     discount: "-30 %",
-    category: "Estufas de leña",
-    title: "Estufa de leña INTERSTOVES ALESSIA, 14 kW",
+    category: "Kaminöfen",
+    title: "Kaminofen INTERSTOVES ALESSIA, 14 kW",
     description:
-      "La ALESSIA de INTERSTOVES es una estufa de leña con potencia declarada de 14 kW.",
+      "Der ALESSIA von INTERSTOVES ist ein leistungsstarker Kaminofen mit 14 kW Nennwärmeleistung.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 577.0,
@@ -299,10 +299,10 @@ export const productsData: Product[] = [
   {
     id: "prod-23",
     discount: "-30 %",
-    category: "Estufas de leña",
-    title: "Estufa estanca de leña DEVILLE EGUZKI, 6 kW",
+    category: "Kaminöfen",
+    title: "Raumluftunabhängiger Kaminofen DEVILLE EGUZKI, 6 kW",
     description:
-      "Modelo EGUZKI de DEVILLE, una estufa estanca de leña con potencia indicada de 6 kW.",
+      "Modell EGUZKI von DEVILLE, ein raumluftunabhängiger Kaminofen mit einer angegebenen Leistung von 6 kW.",
     rating: 4,
     reviewsCount: 58,
     oldPrice: 2600.0,

@@ -2,77 +2,85 @@ export default function TermsPage() {
   return (
     <article className="legal-page">
       <div className="legal-container">
-        <span className="section-subtitle">Antes de realizar tu pedido</span>
-        <h1 className="legal-title">Condiciones generales de venta</h1>
+        <span className="section-subtitle">Vor Ihrer Bestellung</span>
+        <h1 className="legal-title">Allgemeine Geschäftsbedingungen (AGB)</h1>
         <p className="legal-intro">
-          Estas reglas establecen las condiciones para comprar combustibles y
-          artículos de calefacción en la tienda en línea de Woodenza.
+          Diese Regeln legen die Bedingungen für den Kauf von Brennstoffen und
+          Heizartikeln im Online-Shop von Holzvanta fest.
         </p>
 
         <section className="legal-section">
-          <h2>1. Alcance de estas condiciones</h2>
+          <h2>1. Geltungsbereich dieser Bedingungen</h2>
           <p>
-            Se aplican a las compras efectuadas en esta web, tanto por
-            particulares como por profesionales. Al confirmar un pedido,
-            aceptas estas condiciones en su totalidad.
+            Sie gelten für Käufe auf dieser Website, sowohl durch Privatpersonen
+            als auch durch gewerbliche Kunden. Mit der Bestätigung einer Bestellung
+            erkennen Sie diese Bedingungen in vollem Umfang an.
           </p>
         </section>
+
         <section className="legal-section">
-          <h2>2. Información de producto y confirmación del pedido</h2>
+          <h2>2. Produktinformationen und Bestellbestätigung</h2>
           <p>
-            Cada ficha presenta las características principales del producto,
-            su precio y su disponibilidad. La compra queda confirmada al
-            validar la cesta y recibir la confirmación del pago o de la
-            transferencia.
+            Jede Produktseite zeigt die wesentlichen Merkmale des Produkts,
+            seinen Preis und seine Verfügbarkeit. Der Kauf kommt mit dem
+            Abschluss des Warenkorbs und dem Erhalt der Zahlungs- oder
+            Überweisungsbestätigung zustande.
           </p>
         </section>
+
         <section className="legal-section">
-          <h2>3. Importe y medios de pago</h2>
+          <h2>3. Preise und Zahlungsarten</h2>
           <p>
-            Los importes aparecen en euros e incluyen los impuestos cuando
-            corresponda. Puedes pagar con los métodos que se ofrezcan durante
-            el proceso de compra. Si eliges transferencia, tramitaremos el
-            pedido después de recibir los fondos.
+            Die Beträge sind in Euro angegeben und enthalten gegebenenfalls die
+            gesetzliche Mehrwertsteuer. Sie können mit den während des
+            Bestellvorgangs angebotenen Methoden bezahlen. Wenn Sie die Überweisung
+            wählen, bearbeiten wir die Bestellung nach Eingang des Geldes.
           </p>
         </section>
+
         <section className="legal-section">
-          <h2>4. Condiciones de entrega</h2>
+          <h2>4. Lieferbedingungen</h2>
           <p>
-            Consulta nuestra política de envíos y devoluciones para conocer las
-            zonas disponibles y los plazos estimados. Antes de pedir, comprueba
-            que se pueda acceder al punto de descarga de forma segura y
-            practicable.
+            Bitte beachten Sie unsere Versand- und Rückgaberichtlinien für
+            verfügbare Regionen und voraussichtliche Lieferzeiten. Überprüfen Sie
+            vor der Bestellung, ob die Abladestelle sicher und problemlos
+            zugänglich ist.
           </p>
         </section>
+
         <section className="legal-section">
-          <h2>5. Desistimiento</h2>
+          <h2>5. Widerrufsrecht</h2>
           <p>
-            Podrás ejercer el derecho de desistimiento en los términos que
-            establezca la ley. Este derecho no se aplica a artículos
-            personalizados conforme a tus indicaciones ni a productos que se
-            deterioren rápidamente. En la política de envíos y devoluciones
-            encontrarás el procedimiento.
+            Sie können Ihr Widerrufsrecht gemäß den gesetzlichen Bestimmungen
+            ausüben. Dieses Recht gilt nicht für Artikel, die nach Ihren
+            Spezifikationen angefertigt wurden, oder für schnell verderbliche Waren.
+            Das genaue Verfahren finden Sie in den Versand- und
+            Rückgaberichtlinien.
           </p>
         </section>
+
         <section className="legal-section">
-          <h2>6. Garantías legales y uso de los productos</h2>
+          <h2>6. Gesetzliche Gewährleistung und Verwendung der Produkte</h2>
           <p>
-            Se mantienen las garantías legales que correspondan. Utiliza cada
-            producto para el fin previsto y sigue las instrucciones del
-            fabricante; el vendedor no responde de los daños derivados de un
-            uso inadecuado.
+            Es gelten die entsprechenden gesetzlichen Gewährleistungen.
+            Verwenden Sie jedes Produkt für den vorgesehenen Zweck und befolgen
+            Sie die Anweisungen des Herstellers; der Verkäufer haftet nicht für
+            Schäden, die durch unsachgemäßen Gebrauch entstehen.
           </p>
         </section>
+
         <section className="legal-section">
-          <h2>7. Contacto</h2>
+          <h2>7. Kontakt</h2>
           <p>
-            Para consultar cualquier asunto relacionado con tu pedido,
-            contacta con nosotros en info@woodenza.es o en el +34 727 74 54 78.
-            Dirección: Avenida de la Constitución, 344 08860 CASTELLDEFELS ESPAGNE
+            Für Anliegen rund um Ihre Bestellung kontaktieren Sie uns bitte unter{" "}
+            <strong>info@holzvanta.de</strong> oder telefonisch unter{" "}
+            <strong>+49 (0) 800 123 4567</strong>.<br />
+            Unternehmenssitz / Kundenservice Deutschland.
           </p>
         </section>
+
         <p className="legal-updated">
-          Última actualización: 17 de septiembre de 2026
+          Letzte Aktualisierung: 17. September 2026
         </p>
       </div>
     </article>

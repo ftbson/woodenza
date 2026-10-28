@@ -29,7 +29,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Laden des Warenkorbs aus dem localStorage beim Start
   useEffect(() => {
-    const savedCart = localStorage.getItem("swissholz_cart");
+    const savedCart = localStorage.getItem("holzvanta_cart");
     if (savedCart) {
       try {
         setCart(JSON.parse(savedCart));
@@ -41,7 +41,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Bei jeder Änderung im localStorage speichern
   useEffect(() => {
-    localStorage.setItem("swissholz_cart", JSON.stringify(cart));
+    localStorage.setItem("holzvanta_cart", JSON.stringify(cart));
   }, [cart]);
 
   const addToCart = (product: Omit<CartItem, "quantity">) => {

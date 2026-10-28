@@ -2,57 +2,61 @@ export default function LegalNoticePage() {
   return (
     <article className="legal-page">
       <div className="legal-container">
-        <span className="section-subtitle">Datos de publicación</span>
-        <h1 className="legal-title">Aviso legal</h1>
+        <span className="section-subtitle">Veröffentlichungsdaten</span>
+        <h1 className="legal-title">Impressum</h1>
         <p className="legal-intro">
-          Este espacio reúne la información identificativa y las condiciones
-          de uso de la tienda en línea.
+          Dieser Bereich enthält die Identifikationsinformationen und Nutzungsbedingungen
+          des Online-Shops.
         </p>
 
         <section className="legal-section">
-          <h2>Editor y responsable del sitio</h2>
+          <h2>Herausgeber und Verantwortlicher für die Website</h2>
           <p>
-            Woodenza
+            Holzvanta
             <br />
-            Dirección:  Avenida de la Constitución, 344 08860 CASTELLDEFELS ESPAGNE
+            Adresse: Deutschland
             <br />
-            Correo electrónico: info@woodenza.es
+            E-Mail: info@holzvanta.de
             <br />
-            Teléfono: +34 727 74 54 78
+            Telefon: +49 800 123 4567
           </p>
           <p>
-            Antes de publicar la versión definitiva, el responsable debe añadir
-            la forma jurídica de la empresa, su número de registro y, cuando
-            corresponda, el número de IVA.
+            Vor der endgültigen Veröffentlichung muss der Verantwortliche
+            die Rechtsform des Unternehmens, seine Registernummer und ggf.
+            die Umsatzsteuer-Identifikationsnummer hinzufügen.
           </p>
         </section>
+        
         <section className="legal-section">
-          <h2>Proveedor de alojamiento</h2>
+          <h2>Hosting-Anbieter</h2>
           <p>
-            El responsable debe indicar el nombre y el domicilio social del
-            proveedor que aloja este sitio, utilizando los datos que este haya
-            facilitado.
+            Der Verantwortliche muss den Namen und den eingetragenen Sitz des
+            Anbieters angeben, der diese Website hostet, unter Verwendung der
+            von diesem bereitgestellten Daten.
           </p>
         </section>
+
         <section className="legal-section">
-          <h2>Derechos de propiedad intelectual</h2>
+          <h2>Urheberrecht und geistiges Eigentum</h2>
           <p>
-            La legislación sobre propiedad intelectual protege los textos,
-            imágenes, marcas, logotipos y otros contenidos de esta web. No está
-            permitida su reproducción ni utilización sin autorización.
+            Die Texte, Bilder, Marken, Logos und sonstigen Inhalte dieser Website
+            sind durch das Urheberrecht geschützt. Jegliche Vervielfältigung oder
+            Nutzung ohne Genehmigung ist nicht gestattet.
           </p>
         </section>
+
         <section className="legal-section">
-          <h2>Disponibilidad y responsabilidad</h2>
+          <h2>Verfügbarkeit und Haftung</h2>
           <p>
-            Woodenza trabaja para que la información publicada sea correcta y
-            esté al día, aunque pueden producirse errores o interrupciones
-            temporales del servicio. La presencia de enlaces externos no
-            supone que respaldemos los contenidos de terceros.
+            Holzvanta bemüht sich sicherzustellen, dass die veröffentlichten
+            Informationen korrekt und aktuell sind, jedoch kann es zu Fehlern
+            oder vorübergehenden Dienstunterbrechungen kommen. Das Vorhandensein
+            externer Links bedeutet nicht, dass wir die Inhalte Dritter unterstützen.
           </p>
         </section>
+
         <p className="legal-updated">
-          Última actualización: 17 de septiembre de 2026
+          Letzte Aktualisierung: 17. September 2026
         </p>
       </div>
     </article>

@@ -7,29 +7,29 @@ export default function ContactPage() {
 
   const faqs = [
     {
-      question: "¿Qué variedades de leña puedo encontrar?",
+      question: "Welche Brennholzsorten kann ich finden?",
       answer:
-        "El catálogo incluye sobre todo maderas duras con alto poder calorífico, como roble, haya, carpe y fresno. Su combustión uniforme y duradera las hace adecuadas para estufas, chimeneas y hogares cerrados.",
+        "Unser Katalog umfasst vor allem Harthölzer mit einem hohen Heizwert wie Eiche, Buche, Hainbuche und Esche. Ihre gleichmäßige und langanhaltende Verbrennung eignet sich ideal für Öfen, Kamine und geschlossene Feuerstätten.",
     },
     {
-      question: "¿Puedo utilizar la leña nada más recibirla?",
+      question: "Kann das Brennholz sofort nach Erhalt verwendet werden?",
       answer:
-        "Sí. La leña se seca en horno y tiene una humedad residual inferior al 20 %, por lo que llega lista para usar y favorece una combustión eficiente con menos humo.",
+        "Ja. Das Brennholz ist kammergetrocknet und hat eine Restfeuchte von unter 20 %, sodass es sofort einsatzbereit ist und eine effiziente Verbrennung mit weniger Rauch gewährleistet.",
     },
     {
-      question: "¿En qué medidas se venden los troncos?",
+      question: "In welchen Längen werden die Holzscheite verkauft?",
       answer:
-        "Disponemos de troncos de 25 y 33 cm, medidas habituales que se adaptan a muchas estufas y chimeneas modernas.",
+        "Wir bieten Scheite in 25 cm und 33 cm an, gängige Maße, die sich perfekt für viele moderne Öfen und Kamine eignen.",
     },
     {
-      question: "¿Cómo se realiza la entrega de los palés?",
+      question: "Wie erfolgt die Anlieferung der Paletten?",
       answer:
-        "Llevamos los palés hasta tu domicilio y, con una transpaleta, los dejamos tan cerca como sea posible del lugar donde los guardarás.",
+        "Wir liefern die Paletten direkt zu Ihnen nach Hause und stellen sie mithilfe eines Hubwagens so nah wie möglich an Ihren Lagerort ab.",
     },
     {
-      question: "¿Cuánta leña necesito para la temporada?",
+      question: "Wie viel Brennholz benötige ich für die Heizsaison?",
       answer:
-        "Para encender la chimenea de vez en cuando, medio palé suele ser suficiente. Si la leña es tu fuente principal de calor durante el invierno, puedes necesitar entre dos y tres palés, según el tamaño de la vivienda.",
+        "Wenn Sie Ihren Kamin nur gelegentlich anzünden, reicht meist eine halbe Palette aus. Ist Holz Ihre Hauptwärmequelle im Winter, benötigen je nach Wohnungsgröße zwei bis drei Paletten.",
     },
   ];
 
@@ -43,8 +43,8 @@ export default function ContactPage() {
         <div className="contact-grid">
           {/* COLUMNA IZQUIERDA: preguntas frecuentes */}
           <div className="faq-column">
-            <span className="section-subtitle">TE AYUDAMOS</span>
-            <h2 className="section-title">Dudas habituales sobre leña y pedidos</h2>
+            <span className="section-subtitle">WIR HELFEN IHNEN</span>
+            <h2 className="section-title">Häufige Fragen zu Brennholz und Bestellungen</h2>
 
             <div className="faq-accordion">
               {faqs.map((faq, index) => (
@@ -80,13 +80,13 @@ export default function ContactPage() {
 
           {/* COLUMNA DERECHA: FORMULARIO */}
           <div className="form-column">
-            <span className="section-subtitle">            ¿NECESITAS AYUDA?</span>
+            <span className="section-subtitle">BRAUCHEN SIE HILFE?</span>
             <h2 className="section-title">
-              Estamos aquí para resolver tus dudas sobre productos, entregas o pedidos.
+              Wir sind hier, um Ihre Fragen zu Produkten, Lieferungen oder Bestellungen zu beantworten.
             </h2>
 
             <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-              {/* Campo de texto */}
+              {/* Campo de texto oculto / anti-spam */}
               <input
                 type="text"
                 className="input-full-bordered"
@@ -98,37 +98,37 @@ export default function ContactPage() {
                 <input
                   type="text"
                   className="input-underline"
-                  placeholder="Tu nombre"
+                  placeholder="Ihr Name"
                   required
                 />
                 <input
                   type="email"
                   className="input-underline"
-                  placeholder="Tu correo electrónico"
+                  placeholder="Ihre E-Mail-Adresse"
                   required
                 />
                 <input
                   type="tel"
                   className="input-underline"
-                  placeholder="Tu teléfono"
+                  placeholder="Ihre Telefonnummer"
                 />
                 <input
                   type="text"
                   className="input-underline"
-                  placeholder="Motivo de la consulta"
+                  placeholder="Betreff der Anfrage"
                 />
               </div>
 
               {/* Mensaje */}
               <textarea
                 className="input-underline textarea"
-                placeholder="Cuéntanos en qué podemos ayudarte"
+                placeholder="Teilen Sie uns mit, wie wir Ihnen helfen können"
                 rows={3}
                 required
               ></textarea>
 
               <button type="submit" className="btn-submit-contact">
-                ENVIAR CONSULTA
+                ANFRAGE SENDEN
               </button>
             </form>
           </div>

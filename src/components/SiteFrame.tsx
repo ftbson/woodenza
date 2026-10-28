@@ -15,7 +15,7 @@ export default function SiteFrame({
   const isAdminPage = pathname.startsWith("/admin");
 
   useEffect(() => {
-    document.documentElement.lang = isAdminPage ? "fr" : "es";
+    document.documentElement.lang = isAdminPage ? "fr" : "de";
   }, [isAdminPage]);
 
   return (

@@ -4,20 +4,20 @@ import { db } from "@/lib/db";
 import { orders } from "@/lib/schema";
 import { cookies } from "next/headers";
 
-// POST : Enregistrer une nouvelle commande
+// POST: Eine neue Bestellung speichern
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { customer, subtotal, shippingCost, grandTotal } = body;
 
-    // Génération d'un ID unique pour la commande (ex: ORD-1725450000000)
+    // Generierung einer eindeutigen Bestell-ID (z. B. ORD-1725450000000)
     const orderId = `ORD-${Date.now()}`;
 
     await db.insert(orders).values({
       id: orderId,
       firstName: customer.firstName,
       lastName: customer.lastName,
-      country: customer.country,
+      country: customer.country, // Sera enregistré ou mis à jour côté client pour Deutschland
       streetAddress: customer.streetAddress,
       whatsapp: customer.whatsapp,
       email: customer.email,
@@ -32,7 +32,7 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true, orderId });
   } catch (error) {
-    console.error("Erreur lors de la création de la commande :", error);
+    console.error("Fehler beim Erstellen der Bestellung:", error);
     return NextResponse.json(
       { error: "Fehler beim Erstellen der Bestellung" },
       { status: 500 },
@@ -40,17 +40,17 @@ export async function POST(request: Request) {
   }
 }
 
-// GET : Récupérer toutes les commandes pour la page admin
+// GET: Alle Bestellungen für die Admin-Seite abrufen
 export async function GET() {
   try {
     const token = (await cookies()).get("admin_token")?.value;
     if (token !== "authenticated_admin_holz_session") {
-      return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
+      return NextResponse.json({ error: "Nicht autorisiert" }, { status: 401 });
     }
     const allOrders = await db.select().from(orders);
     return NextResponse.json(allOrders);
   } catch (error) {
-    console.error("Erreur lors du chargement des commandes :", error);
+    console.error("Fehler beim Laden der Bestellungen:", error);
     return NextResponse.json(
       { error: "Fehler beim Laden der Bestellungen" },
       { status: 500 },

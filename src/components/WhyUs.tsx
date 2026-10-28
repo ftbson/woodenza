@@ -12,27 +12,26 @@ interface Feature {
 const features: Feature[] = [
   {
     icon: "fa-solid fa-truck-fast",
-    title: "Entrega a domicilio",
+    title: "Haustürlieferung",
     description:
-      "Recibe tu pedido en Espana en un plazo estimado de 24 a 72 horas.",
+      "Erhalten Sie Ihre Bestellung in Deutschland innerhalb von 24 bis 72 Stunden.",
     active: true,
   },
   {
     icon: "fa-solid fa-award",
-    title: "Combustibles seleccionados",
-    description: "Leña Espana secada en horno y certificada.",
+    title: "Ausgewählte Brennstoffe",
+    description: "Kammergetrocknetes und zertifiziertes Brennholz für Deutschland.",
   },
   {
     icon: "fa-solid fa-shield-halved",
-    title: "Opciones de pago seguras",
+    title: "Sichere Zahlungsoptionen",
     description:
-      "Elige entre tarjeta bancaria, Bizum o transferencia bancaria durante el pago.",
+      "Wählen Sie während des Bezahlvorgangs zwischen Kreditkarte, PayPal oder Banküberweisung.",
   },
   {
     icon: "fa-solid fa-headset",
-    title: "Asesoramiento cercano",
-    description:
-      "Resolvemos tus dudas y te asesoramos de lunes a sábado.",
+    title: "Persönliche Beratung",
+    description: "Wir beantworten Ihre Fragen und beraten Sie von Montag bis Samstag.",
   },
 ];
 
@@ -44,10 +43,25 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { id: "clients", target: 15000, suffix: "+", label: "CLIENTES QUE CONFÍAN EN NOSOTROS" },
-  { id: "steres", target: 25000, suffix: "", label: "ESTÉREOS DE LEÑA ENTREGADOS" },
-  { id: "experience", target: 12, suffix: "", label: "AÑOS EN EL SECTOR" },
-  { id: "cantons", target: 26, suffix: "", label: "CANTONES DE Espana ATENDIDOS" },
+  {
+    id: "clients",
+    target: 15000,
+    suffix: "+",
+    label: "KUNDEN, DIE UNS VERTRAUEN",
+  },
+  {
+    id: "steres",
+    target: 25000,
+    suffix: "",
+    label: "RAUMMETER BRENNHOLZ GELIEFERT",
+  },
+  { id: "experience", target: 12, suffix: "", label: "JAHRE ERFAHRUNG IN DER BRANCHE" },
+  {
+    id: "cantons",
+    target: 16,
+    suffix: "",
+    label: "BUNDESLÄNDER IN Deutschland BELIEFERT",
+  },
 ];
 
 export default function WhyUs() {
@@ -92,7 +106,7 @@ export default function WhyUs() {
         clients: Math.floor(progress * 15000),
         steres: Math.floor(progress * 25000),
         experience: Math.floor(progress * 12),
-        cantons: Math.floor(progress * 26),
+        cantons: Math.floor(progress * 16),
       });
 
       if (step >= steps) {
@@ -101,7 +115,7 @@ export default function WhyUs() {
           clients: 15000,
           steres: 25000,
           experience: 12,
-          cantons: 26,
+          cantons: 16,
         });
       }
     }, intervalTime);
@@ -110,16 +124,16 @@ export default function WhyUs() {
   return (
     <section className="whyus-section" ref={sectionRef}>
       <div className="whyus-container">
-        {/* En-tête */}
+        {/* Kopfbereich */}
         <div className="whyus-header">
-          <h2 className="whyus-title">Calefacción de leña con Woodenza</h2>
+          <h2 className="whyus-title">Holzheizung mit Holzvanta</h2>
           <p className="whyus-subtitle">
-            Calidad, servicio y una compra sencilla, desde la elección hasta la entrega.
+            Qualität, Service und ein einfacher Kaufprozess – von der Auswahl bis zur Lieferung.
           </p>
           <div className="whyus-line"></div>
         </div>
 
-        {/* Ventajas */}
+        {/* Vorteile */}
         <div className="features-grid">
           {features.map((feature, idx) => (
             <div key={idx} className="feature-card">
@@ -136,12 +150,12 @@ export default function WhyUs() {
           ))}
         </div>
 
-        {/* Estadísticas */}
+        {/* Statistik */}
         <div className="stats-banner">
           {stats.map((stat) => (
             <div key={stat.id} className="stat-item">
               <div className="stat-number">
-                {counts[stat.id].toLocaleString("es-CH")}
+                {counts[stat.id].toLocaleString("de-DE")}
                 {stat.suffix}
               </div>
               <div className="stat-label">{stat.label}</div>

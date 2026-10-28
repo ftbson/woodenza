@@ -18,63 +18,64 @@ export default function Home() {
 
   return (
     <main>
-      {/* 1. Carrusel principal */}
+      {/* 1. Haupt-Karussell / Hero */}
       <Hero />
 
-      {/* 2. Categorías */}
+      {/* 2. Kategorien */}
 
-      {/* 3. Productos más vendidos */}
+      {/* 3. Bestseller-Produkte */}
       <BestSellers />
 
       <Poele />
       <Categories />
 
-      {/* 4. Por qué Woodenza */}
+      {/* 4. Warum Holzvanta */}
       <WhyUs />
 
-      {/* 5. Promoción de temporada */}
+      {/* 5. Saisonale Aktion */}
 
       <section className="promo-banner-section">
         <div className="promo-banner-container">
           <div className="promo-banner-content">
-            {/* Descuento */}
+            {/* Rabatt */}
             <div className="promo-badge">
               <i className="fa-solid fa-bolt"></i>
               <span>-50%</span>
             </div>
 
-            {/* Título */}
+            {/* Titel */}
             <h2 className="promo-title">
-              Equipa tu hogar con calefacción de calidad y ahorra hasta un 50 %
+              Rüsten Sie Ihr Zuhause mit hochwertiger Heizung aus und sparen Sie bis zu 50 %
             </h2>
 
-            {/* Subtítulo */}
+            {/* Untertitel */}
             <p className="promo-subtitle">
-              Promoción de temporada disponible hasta fin de existencias.
+              Saisonale Aktion gültig solange der Vorrat reicht.
             </p>
           </div>
 
-          {/* Llamada a la acción */}
+          {/* Call to Action */}
           <Link href="/boutique" className="promo-btn">
-            <span>Explorar las ofertas</span>
+            <span>Angebote entdecken</span>
             <i className="fa-solid fa-arrow-right"></i>
           </Link>
         </div>
       </section>
-      {/* 6. Opiniones */}
+
+      {/* 6. Bewertungen */}
       <Testimonials />
 
-      {/* 7. Volver arriba */}
+      {/* 7. Nach oben */}
 
       <section className="scroll-top-section">
-        {/* Botón fijo para volver arriba */}
+        {/* Fester Button zum Nach-oben-Scrollen */}
         <button
           onClick={scrollToTop}
           className="scroll-top-btn-fixed"
-          aria-label="Subir al inicio de la página"
+          aria-label="Nach oben scrollen"
         >
           <i className="fa-solid fa-arrow-up"></i>
-          {/* <span>Volver arriba</span> */}
+          {/* <span>Nach oben</span> */}
         </button>
       </section>
     </main>
